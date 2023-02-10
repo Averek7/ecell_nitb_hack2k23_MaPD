@@ -4,6 +4,7 @@ import log from "./log.js"
 import { verifyToken } from "./auth/controllers/auth.js"
 import auth from './auth/routes/index.js';
 import product from './product/routes/index.js'
+import cors from "cors"
 
 const app = express()
 const port = 5000
