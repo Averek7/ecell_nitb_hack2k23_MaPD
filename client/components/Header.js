@@ -4,6 +4,11 @@ import logo from "../assets/logo.png";
 import { FaUser } from "react-icons/fa";
 import { useIsMounted } from "@/pages/hooks/useIsMounted";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAccount, useSigner } from "wagmi";
+import { useRouter } from "next/router";
+import { ethers } from "ethers";
+import { useDispatch } from "react-redux";
+import { addContractAddresses, saveAddressAndSigner } from "@/redux/header";
 
 const tabs = [
   {
@@ -22,6 +27,23 @@ const tabs = [
 
 function Header() {
   const mounted = useIsMounted();
+  const { address } = useAccount();
+  const { data: signer } = useSigner();
+
+  // const instances = new ethers.Contract(address, abi, signer);
+
+  // useEffect(() => {
+  //   useDispatch(
+  //     addContractAddresses({
+  //       DL_contract_address: "DL_contract_address.address",
+  //       nft_contract_address: "nft_contrat_address.address",
+  //     })
+  //   );
+  //   address && signer
+  //     ? dispatchEvent(saveAddressAndSigner({ address, signer, instances }))
+  //     : null;
+  // }, [signer]);
+
   return (
     <div className="header-container">
       <div className="logo-container">

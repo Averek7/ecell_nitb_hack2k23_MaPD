@@ -97,12 +97,7 @@
 
 .center::before,
 .center::after {
-
-/* <<<<<<< HEAD
-  content: '';
-======= */
   content: "";
-/* >>>>>>> 2712202ef7b493caaa094b3e37d2b5faa1bd74d4 */
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -130,11 +125,7 @@
 
 .thirteen::before,
 .thirteen::after {
-/* <<<<<<< HEAD
-  content: '';
-======= */
   content: "";
-/* >>>>>>> 2712202ef7b493caaa094b3e37d2b5faa1bd74d4 */
   position: absolute;
   z-index: -1;
 }

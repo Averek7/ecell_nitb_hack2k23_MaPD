@@ -36,24 +36,39 @@
 // You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
-const hre = require("hardhat");
+
+// const hre = require("hardhat");
+
+// async function main() {
+//   const Logistics = await hre.ethers.getContractFactory('logistics')
+//   const logistics = await Logistics.deploy()
+
+//   await logistics.deployed()
+//   console.log('Contract deployed to:', logistics.address)
+
+//   // await lottery.set('Dibass')
+//   // console.log('The name is:', await showName.get())
+//   // console.log('The name is:', await lottery.MyName())
+// }
+
+// // We recommend this pattern to be able to use async/await everywhere
+// // and properly handle errors.
+// main().catch((error) => {
+//   console.error(error);
+//   process.exitCode = 1;
+// });
 
 async function main() {
-  const Logistics = await hre.ethers.getContractFactory('logistics')
-  const logistics = await Logistics.deploy()
+  const Products = await ethers.getContractFactory("Products");
 
-  await logistics.deployed()
-  console.log('Contract deployed to:', logistics.address)
-
-  // await lottery.set('Dibass')
-  // console.log('The name is:', await showName.get())
-  // console.log('The name is:', await lottery.MyName())
+  // Start deployment, returning a promise that resolves to a contract object
+  const products = await Products.deploy();   
+  console.log("Contract deployed to address:", products.address);
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
-
+main()
+ .then(() => process.exit(0))
+ .catch(error => {
+   console.error(error);
+   process.exit(1);
+ });

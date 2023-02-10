@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.9;
 
-contract logistics {
+contract Products {
     mapping(uint256 => string) public products;
     uint256 public maxProductID;
 
