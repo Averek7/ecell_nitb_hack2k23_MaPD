@@ -1,0 +1,27 @@
+.desc-container {
+  color: azure;
+  font-weight: 600;
+}
+.left {
+  background-color: #f5bf8f;
+}
+.right {
+  background-color: #e7aa74;
+}
+.left,
+.right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+}
+.left .desc-text {
+  width: 60%;
+  margin: 0 20px 0 15px;
+}
+
+.right .desc-text {
+  width: 60%;
+  margin: 0 15px 0 20px;
+}
