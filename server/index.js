@@ -2,7 +2,8 @@ import express from "express"
 import dotenv from 'dotenv'
 import log from "./log.js"
 import { verifyToken } from "./auth/controllers/auth.js"
-import auth from './auth/routes/index.js'
+import auth from './auth/routes/index.js';
+import product from './product/routes/index.js'
 
 const app = express()
 const port = 5000
@@ -17,6 +18,7 @@ app.get("/", verifyToken, (req, res) => {
 })
 
 app.use("/auth", auth);
+app.use("/product", product);
 
 app.listen(port, () => {
   log.debug([port], "[lesenting on port]")
