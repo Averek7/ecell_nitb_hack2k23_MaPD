@@ -46,12 +46,15 @@
 .logo-container {
   margin: 5px;
 }
-.profile {
+.prof {
   padding: 8px;
   margin-right: 30px;
   border-radius: 25px;
   border: 5px solid #e7aa74;
 }
-.profile:hover {
+.prof-btn-container {
+  display: flex;
+}
+.prof:hover {
   background-color: #f5bf8f;
 }

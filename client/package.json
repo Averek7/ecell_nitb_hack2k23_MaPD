@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^1.7.1",
     "@next/font": "13.1.6",
     "@rainbow-me/rainbowkit": "^0.8.1",
     "@reduxjs/toolkit": "^1.9.2",

@@ -1,0 +1,35 @@
+.support-container {
+  background-color: #0e0c07;
+  color: #fff;
+  overflow-x: hidden;
+}
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.support-list {
+  display: flex;
+  justify-content: center;
+}
+.support-list li {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  list-style: none;
+}
+.help,
+.support {
+  margin: 15px 0;
+}
+.help li,
+.support li {
+  margin: 12px;
+  padding: 12px;
+}
+.support-lottie {
+  margin: 0 15px;
+  flex-wrap: wrap;
+  padding: 12px;
+}

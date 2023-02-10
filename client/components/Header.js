@@ -3,6 +3,7 @@ import Image from "next/image";
 import logo from "../assets/logo.png";
 import { FaUser } from "react-icons/fa";
 import { useIsMounted } from "@/pages/hooks/useIsMounted";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const tabs = [
   {
@@ -39,8 +40,11 @@ function Header() {
           ))}
         </div>
       </div>
-      <div className="profile">
-        <div>{mounted ? <FaUser size={18} /> : null}</div>
+      <div className="prof-btn-container">
+        <div className="prof">
+          <div>{mounted ? <FaUser size={18} /> : null}</div>
+        </div>
+        <ConnectButton />
       </div>
     </div>
   );
