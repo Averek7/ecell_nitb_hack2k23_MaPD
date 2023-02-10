@@ -10,11 +10,10 @@ import Desc from "@/components/Desc";
 
 export default function Home() {
   return (
-    <div>
+    
       <Layout>
-        <Desc />
-        <Support />
+        
       </Layout>
-    </div>
+    
   );
 }

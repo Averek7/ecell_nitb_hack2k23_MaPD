@@ -4,6 +4,7 @@ import "@/styles/Header.css";
 import "@/styles/Footer.css";
 import "@/styles/Support.css";
 import "@/styles/scan.css";
+import "@/styles/auth.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { wrapper } from "../redux/store"
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";

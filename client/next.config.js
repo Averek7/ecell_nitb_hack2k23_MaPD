@@ -1,6 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+module.exports = {
+  env: {
+    BACKEND_ENDPOINT: "http://43.204.234.140:5000"
+  },
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false }
 
-module.exports = nextConfig
+    return config
+  }
+}

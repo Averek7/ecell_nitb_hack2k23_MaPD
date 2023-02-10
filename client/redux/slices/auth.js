@@ -29,6 +29,7 @@ export const registerUser = createAsyncThunk(
       )
       if (response) thunkAPI.dispatch(loginUser(data))
       console.log(response)
+      localStorage.setItem("token", response.data.token)
       return response.data
     } catch (err) {
       thunkAPI.dispatch(setError(err.response?.data?.message))
@@ -46,8 +47,12 @@ export const loginUser = createAsyncThunk(
         thunkAPI.dispatch(setError("All feilds are required."))
         return
       }
-      const response = await axios.post("/login")
+      const response = await axios.post(
+        `${process.env.BACKEND_ENDPOINT}/auth/login`,
+        { ...data }
+      )
       console.log(response)
+      localStorage.setItem("token", response.data.token)
       return response.data
     } catch (err) {
       thunkAPI.dispatch(setError(err.response?.data?.message))
