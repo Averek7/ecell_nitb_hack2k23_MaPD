@@ -58,3 +58,19 @@
 .prof:hover {
   background-color: #f5bf8f;
 }
+
+
+@media screen and (max-width: 773px) {
+
+
+  .header-container {
+    color: #000;
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    background-color: #f3dbc5;
+    justify-content: space-evenly;
+  }
+
+
+}
