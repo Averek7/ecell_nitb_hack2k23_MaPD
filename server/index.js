@@ -15,7 +15,7 @@ app.use(express.json())
 
 app.get("/", (req, res) => {
   log.debug([], "[request call")
-  res.send("Hello World!")
+  res.send("Hello World")
 })
 
 app.listen(port, () => {
