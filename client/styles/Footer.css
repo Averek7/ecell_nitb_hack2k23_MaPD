@@ -4,7 +4,7 @@
   bottom: 0;
   width: 100%;
   color: #fff;
-  /* position: fixed; */
+  position: fixed;
   background-color: black;
 }
 
@@ -27,3 +27,4 @@
 .media-container .media {
   padding: 0 15px;
 }
+

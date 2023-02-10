@@ -3,6 +3,7 @@ import "@/styles/Desc.css";
 import "@/styles/Header.css";
 import "@/styles/Footer.css";
 import "@/styles/Support.css";
+import "@/styles/scan.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";

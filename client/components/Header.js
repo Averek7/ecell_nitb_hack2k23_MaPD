@@ -16,10 +16,6 @@ const tabs = [
     link: "/",
   },
   {
-    title: "Home",
-    link: "/",
-  },
-  {
     title: "About",
     link: "/",
   },
