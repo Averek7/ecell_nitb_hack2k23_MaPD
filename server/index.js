@@ -12,6 +12,12 @@ dotenv.config()
 
 app.use(express.json())
 
+app.use(express.json())
+app.use(cors())
+app.use(cors({
+  origin: '*'
+}))
+
 app.get("/", verifyToken, (req, res) => {
   log.debug([], "[request call")
   res.send("Hello World")
