@@ -16,4 +16,4 @@ export const successSlice = createSlice({
 });
 
 export const { setSuccess, clearSuccess } = successSlice.actions;
-export default setSuccess.reducer;
+export default successSlice.reducer;
