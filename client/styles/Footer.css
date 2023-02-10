@@ -1,0 +1,30 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  position: fixed;
+  background-color: black;
+}
+
+.footer-content {
+  display: flex;
+  list-style: none;
+}
+
+.footer-content li {
+  padding: 15px;
+  margin: 10px;
+}
+
+.media-container {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.media-container .media {
+  padding: 0 15px;
+}
+

@@ -1,0 +1,44 @@
+.QrMain{
+
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+
+}
+
+
+.QrScannerContainer{
+
+    
+    width: 20%;
+    height: 20%;
+    background-color: rgb(236, 192, 145);
+    /* border: 5px solid black; */
+    border-radius: 25px;
+    padding: 30px;
+
+
+}
+
+.QrScanner{
+
+    border: 8px solid whitesmoke;
+    border-radius: 25px;
+    background-color: rgb(198, 187, 176);
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+@media screen and (max-width: 680px) {
+
+
+    .QrScannerContainer{
+    
+
+        width: 80%;
+        height: 80%;
+    
+    }
+
+}
