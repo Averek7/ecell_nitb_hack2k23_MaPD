@@ -9,29 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@next/font": "13.1.6",
-    "@rainbow-me/rainbowkit": "^0.8.1",
-=======
     "@lottiefiles/lottie-player": "^1.7.1",
     "@next/font": "13.1.6",
     "@rainbow-me/rainbowkit": "^0.8.1",
     "@reduxjs/toolkit": "^1.9.2",
->>>>>>> 2712202ef7b493caaa094b3e37d2b5faa1bd74d4
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "ethers": "^5.7.2",
     "next": "13.1.6",
-<<<<<<< HEAD
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-=======
     "next-redux-wrapper": "^8.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
->>>>>>> 2712202ef7b493caaa094b3e37d2b5faa1bd74d4
     "wagmi": "^0.9.6"
   }
 }
