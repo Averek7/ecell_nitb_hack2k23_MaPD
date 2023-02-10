@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -104,4 +105,9 @@ a {
   html {
     color-scheme: dark;
   }
+=======
+* {
+  margin: 0px;
+  padding: 0px;
+>>>>>>> 2712202ef7b493caaa094b3e37d2b5faa1bd74d4
 }

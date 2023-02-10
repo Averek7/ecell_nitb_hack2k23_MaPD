@@ -1,13 +1,17 @@
 import "@/styles/globals.css";
+import "@/styles/Desc.css";
+import "@/styles/Header.css";
+import "@/styles/Footer.css";
+import "@/styles/Support.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygon, goerli } from "wagmi/chains";
+import { mainnet, polygonMumbai, goerli } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
 const { chains, provider } = configureChains(
-  [mainnet, polygon, goerli],
+  [mainnet, polygonMumbai, goerli],
   [
     alchemyProvider({ apiKey: "M6wTJ_1DsrJkSUE0qusDZO96oASJC8xS" }),
     publicProvider(),
