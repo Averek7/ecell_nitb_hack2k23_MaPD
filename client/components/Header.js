@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import { FaUser } from "react-icons/fa";
@@ -9,6 +9,9 @@ import { useRouter } from "next/router";
 import { ethers } from "ethers";
 import { useDispatch } from "react-redux";
 import { addContractAddresses, saveAddressAndSigner } from "@/redux/header";
+import abi from "../assets/contract_data/Products.json";
+import DL_contract_address from "../assets/contract_data/ProductsAddress.json";
+import nft_contract_address from "../assets/contract_data/nftAddress.json";
 
 const tabs = [
   {
@@ -17,32 +20,38 @@ const tabs = [
   },
   {
     title: "About",
-    link: "/",
+    link: "/about",
   },
   {
     title: "Login",
-    link: "/auth/login",
+    link: "/auth",
   },
 ];
 
 function Header() {
   const mounted = useIsMounted();
+  const dispatch = useDispatch();
   const { address } = useAccount();
   const { data: signer } = useSigner();
+  const [addressfinal, setAddressfinal] = useState(null);
 
-  // const instances = new ethers.Contract(address, abi, signer);
+  const instances = new ethers.Contract(
+    DL_contract_address.address,
+    abi.abi,
+    signer
+  );
 
-  // useEffect(() => {
-  //   useDispatch(
-  //     addContractAddresses({
-  //       DL_contract_address: "DL_contract_address.address",
-  //       nft_contract_address: "nft_contrat_address.address",
-  //     })
-  //   );
-  //   address && signer
-  //     ? dispatchEvent(saveAddressAndSigner({ address, signer, instances }))
-  //     : null;
-  // }, [signer]);
+  useEffect(() => {
+    dispatch(
+      addContractAddresses({
+        DL_contract_address: DL_contract_address.address,
+        nft_contract_address: nft_contract_address.address,
+      })
+    );
+    address && signer
+      ? dispatch(saveAddressAndSigner({ address, signer, instances }))
+      : null;
+  }, [signer]);
 
   return (
     <div className="header-container">

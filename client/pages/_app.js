@@ -5,10 +5,14 @@ import "@/styles/Footer.css";
 import "@/styles/Support.css";
 import "@/styles/scan.css";
 import "@/styles/auth.css";
+<<<<<<< HEAD
 import "@/styles/Home.css";
+=======
+import "@/styles/mintform.css";
+>>>>>>> 275893ad52f783aa399fea0bf044bdba225f935c
 import "@rainbow-me/rainbowkit/styles.css";
-import "@/styles/AddProductForm.css"
-import { wrapper } from "../redux/store"
+import "@/styles/AddProductForm.css";
+import { wrapper } from "../redux/store";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { mainnet, polygonMumbai, goerli } from "wagmi/chains";
@@ -42,4 +46,4 @@ function App({ Component, pageProps }) {
   );
 }
 
-export default wrapper.withRedux(App)
+export default wrapper.withRedux(App);
