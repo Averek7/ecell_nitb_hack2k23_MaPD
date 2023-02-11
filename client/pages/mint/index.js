@@ -23,6 +23,7 @@ function index() {
   const { walletAddress, signer, nftInstances } = useSelector(
     (state) => state.header
   );
+  const { instances } = useSelector((state) => state.header)
 
   const handleChange = (e) => {
     setData({
@@ -31,6 +32,16 @@ function index() {
     });
     console.log(data);
   };
+
+  const addData = async () => {
+    let tokenId = await instances.getProductId()
+    // console.log(Number(tokenId.toString()))
+    let editedData = {
+      ...data,
+      "tokenId": Number(tokenId.toString())
+    }
+    // console.log(editedData);
+  }
 
   const handleClick = () => {
     const auth =
@@ -93,21 +104,31 @@ function index() {
   return (
     <div>
       <Layout>
-        <div className="mintContainer">
-          <div className="widthDiv">
-            <h1>Mint Product Details</h1>
+        <div className="authContainer">
+        <div className="authcenter">
+          <div className="txt">
+            <h1 style={{ margin: "10px 0px" }}>Mint Product Details</h1>
           </div>
           {/* <Error /> */}
-          <div>
-            <input
+          
+            {/* <input
+              
               name="image"
               type="file"
               value={data.imgInput}
               onChange={nftUpload}
-              className="fileInput"
+              className="inputLabel "
+            /> */}
+            <InputBox
+              name="image"
+              type="file"
+              title="Select Image"
+              value={data.imgInput}
+              handleChange={nftUpload}
+              placeholder="Item Name"
+              // disabled={localLoading}
             />
-          </div>
-          <div>
+          
             <InputBox
               name="title"
               title="Title"
@@ -116,8 +137,8 @@ function index() {
               placeholder="Item Name"
               // disabled={localLoading}
             />
-          </div>
-          <div>
+          
+          
             <label className="inputLabel">
               Description:
               <textarea
@@ -129,17 +150,18 @@ function index() {
                 // disabled={localLoading}
               />
             </label>
-          </div>
+          
           <div className="widthDiv">
-            <button className="btn mintBtn" onClick={handleClick}>
+            <button className="btn mintBtn" onClick={addData}>
               {/* {loading || localLoading ? (
                 <Loader height="25" width="25" />
               ) : (
                 "Mint"
               )} */}
-              Mint
+              Submit
             </button>
           </div>
+        </div>
         </div>
         {/* <Success /> */}
       </Layout>

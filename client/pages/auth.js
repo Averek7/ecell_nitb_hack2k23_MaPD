@@ -55,7 +55,7 @@ const auth = () => {
 
   return (
     <Layout>
-      {/* <div className="authContainer"> */}
+      <div className="authContainer">
         {authLogin ? (
           <div className="authcenter">
             <InputBox
@@ -131,11 +131,11 @@ const auth = () => {
               </button>
             </div>
             <p className="smClickText" onClick={() => setAuthLogin(!authLogin)}>
-              {authLogin ? "New User?" : "Already a User?"}
+              {authLogin ? "New User?" : "Already a User? Login Here"}
             </p>
           </div>
         )}
-      {/* </div> */}
+      </div>
     </Layout>
   )
 }
