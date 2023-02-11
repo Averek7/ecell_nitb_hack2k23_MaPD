@@ -25,7 +25,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+<<<<<<< HEAD
     "react-lottie": "^1.2.3",
+=======
+    "react-loader-spinner": "^5.3.4",
+>>>>>>> e4e60cc71ea005695c95b6e319ef19eb83254a24
     "react-qr-code": "^2.0.11",
     "react-qr-reader": "^3.0.0-beta-1",
     "react-redux": "^8.0.5",

@@ -92,7 +92,6 @@ const auth = () => {
               handleChange={handleChange}
               placeholder="Prasang"
             />
-
             <InputBox
               name="email"
               title="Email"
