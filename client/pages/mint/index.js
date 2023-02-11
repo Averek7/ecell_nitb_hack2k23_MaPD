@@ -7,6 +7,7 @@ import { mintQR } from "@/redux/nftQr";
 import { setSuccess } from "@/redux/slices/success";
 import { setError } from "@/redux/slices/error";
 import InputBox from "@/components/InputBox";
+import { QRCodeCanvas } from "qrcode.react";
 
 const projectId = "2LaElUcAr2SYK3KuPpor7Xlc5hB";
 const projectSecret = "0947f1f7854b4631c685a30c20e51d4d";
@@ -101,16 +102,40 @@ function index() {
       });
     console.log(data.image);
   };
+
+  const downloadQRCode = (e) => {
+    e.preventDefault();
+    let canvas = qrRef.current.querySelector("canvas");
+    let image = canvas.toDataURL("image/png");
+    let anchor = document.createElement("a");
+    anchor.href = image;
+    anchor.download = `qr-code.png`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    setUrl("");
+  };
+
+  const qrcode = (
+    <QRCodeCanvas
+      id="qrCode"
+      value={`https://voices.uchicago.edu/201702busn3910001/2018/04/23/pitch-blockchain-in-the-supply-chain/`}
+      size={300}
+      bgColor={"#fff"}
+      level={"H"}
+    />
+  );
+
   return (
     <div>
       <Layout>
         <div className="authContainer">
-        <div className="authcenter">
-          <div className="txt">
-            <h1 style={{ margin: "10px 0px" }}>Mint Product Details</h1>
-          </div>
-          {/* <Error /> */}
-          
+          <div className="authcenter">
+            <div className="txt">
+              <h1 style={{ margin: "10px 0px" }}>Mint Product Details</h1>
+            </div>
+            {/* <Error /> */}
+
             {/* <input
               
               name="image"
@@ -126,19 +151,19 @@ function index() {
               value={data.imgInput}
               handleChange={nftUpload}
               placeholder="Item Name"
-              // disabled={localLoading}
+            // disabled={localLoading}
             />
-          
+
             <InputBox
               name="title"
               title="Title"
               value={data.title}
               handleChange={handleChange}
               placeholder="Item Name"
-              // disabled={localLoading}
+            // disabled={localLoading}
             />
-          
-          
+
+
             <label className="inputLabel">
               Description:
               <textarea
@@ -147,21 +172,24 @@ function index() {
                 value={data.description}
                 onChange={(e) => handleChange(e)}
                 placeholder="Provide detailed description of your item"
-                // disabled={localLoading}
+              // disabled={localLoading}
               />
             </label>
-          
-          <div className="widthDiv">
-            <button className="btn mintBtn" onClick={addData}>
-              {/* {loading || localLoading ? (
+
+            <div className="widthDiv">
+              <button className="btn mintBtn" onClick={addData}>
+                {/* {loading || localLoading ? (
                 <Loader height="25" width="25" />
               ) : (
                 "Mint"
               )} */}
-              Submit
-            </button>
+                Submit
+              </button>
+            </div>
           </div>
-        </div>
+          <div className="qrcode">
+            <div>{qrcode}</div>
+          </div>
         </div>
         {/* <Success /> */}
       </Layout>
