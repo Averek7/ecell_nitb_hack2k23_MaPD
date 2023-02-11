@@ -48,7 +48,7 @@ const searchProduct = async(req, res) => {
     const {query} = req.query;
     const userId = req.userId
     try {
-        console.log(query);
+        console.log('query: ', query);
         const q = formatSearchKey(query);
         const [r] = await searchProductDb({query: q, userId});
         console.log(r);

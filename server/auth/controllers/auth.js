@@ -97,7 +97,9 @@ const verifyToken = async(req, res, next) => {
     const token = req.headers['token'];
   // const token= authHeader && authHeader.split(' ')[1]
 
-  console.log(token);
+  console.log(req.headers);
+
+  console.log('token: ', token);
 
   if (!token) {
     return res.status(401).json({ error: 'token is not present' });

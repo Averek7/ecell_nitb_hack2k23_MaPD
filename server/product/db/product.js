@@ -15,8 +15,8 @@ const searchProductDb = (payload) => {
     pi.measure,
     pi.quantity
 FROM product_info pi
-WHERE pi.product_name LIKE ?
-OR pi.brand LIKE ? AND pi.mfg_id = ?;`;
+WHERE (pi.product_name LIKE ?
+OR pi.brand LIKE ?) AND pi.mfg_id = 7;`;
 
 return pool.query(query, [payload.query, payload.query, payload.userId]);
 }
