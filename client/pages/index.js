@@ -9,11 +9,5 @@ import Desc from "@/components/Desc";
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  return (
-    
-      <Layout>
-        
-      </Layout>
-    
-  );
+  return <Layout></Layout>;
 }
