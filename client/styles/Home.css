@@ -167,8 +167,8 @@ body::after{
     .container .card {
 
         position: relative;
-        width: 60vh;
-        height: 80vh;
+        width: 45vh;
+        height: 72vh;
         /* margin: 30px; */
         box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
         border-radius: 15px;
