@@ -11,8 +11,7 @@ import Layout from "../components/Layout"
 const auth = () => {
   const [authLogin, setAuthLogin] = useState(true)
   const [data, setData] = useState({
-    firstname: "",
-    lastname: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: ""
@@ -54,9 +53,11 @@ const auth = () => {
               handleChange={handleChange}
               placeholder="j39#hnk2"
             />
-            <button className="btn" onClick={handleLogin}>
-              Login
-            </button>
+            <div>
+              <button className="btn" onClick={handleLogin}>
+                Login
+              </button>
+            </div>
             <p className="smClickText" onClick={() => setAuthLogin(!authLogin)}>
               {authLogin
                 ? "New User? Register Here"
@@ -65,24 +66,13 @@ const auth = () => {
           </div>
         ) : (
           <div className="authcenter">
-            <div className="nameRegister">
-              <InputBox
-                name="firstname"
-                title="First Name"
-                type="text"
-                handleChange={handleChange}
-                placeholder="Prasang"
-                doHalf={true}
-              />
-              <InputBox
-                name="lastname"
-                title="last Name"
-                type="text"
-                handleChange={handleChange}
-                placeholder="Maheshwari"
-                doHalf={true}
-              />
-            </div>
+            <InputBox
+              name="firstname"
+              title="First Name"
+              type="text"
+              handleChange={handleChange}
+              placeholder="Prasang"
+            />
             <InputBox
               name="email"
               title="Email"
@@ -104,9 +94,11 @@ const auth = () => {
               handleChange={handleChange}
               placeholder="j39#hnk2"
             />
-            <button className="btn" onClick={handleRegister}>
-              Register
-            </button>
+            <div>
+              <button className="btn" onClick={handleRegister}>
+                Register
+              </button>
+            </div>
             <p className="smClickText" onClick={() => setAuthLogin(!authLogin)}>
               {authLogin ? "New User?" : "Already a User?"}
             </p>
