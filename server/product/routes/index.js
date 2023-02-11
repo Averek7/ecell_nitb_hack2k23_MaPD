@@ -1,7 +1,7 @@
 import express from 'express';
 import { body } from 'express-validator';
 import { verifyToken } from '../../auth/controllers/auth.js';
-import { insertProduct, searchProduct, generateQR } from '../controllers/product.js';
+import { insertProduct, searchProduct, generateQR, updateIpfs, fetchIpfs } from '../controllers/product.js';
 
 const router = express.Router();
 
@@ -15,6 +15,14 @@ router.get('/searchProcduct', verifyToken, async(req, res) => {
 
 router.get('/generateQR', async(req, res) => {
     generateQR(req, res);
+})
+
+router.post('/updateIpfs', async(req, res) => {
+    updateIpfs(req, res);
+})
+
+router.get('/fetchIpfs', async(req, res) => {
+    fetchIpfs(req, res);
 })
 
 export default router;
