@@ -9,8 +9,7 @@ export const registerUser = createAsyncThunk(
     try {
       console.log("register working", data)
       if (
-        data.firstname.length === 0 ||
-        data.lastname.length === 0 ||
+        data.name.length === 0 ||
         data.email.length === 0 ||
         data.password.length === 0
       ) {

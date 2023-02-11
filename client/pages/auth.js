@@ -11,11 +11,11 @@ import Layout from "../components/Layout"
 const auth = () => {
   const [authLogin, setAuthLogin] = useState(true)
   const [data, setData] = useState({
-    firstname: "",
-    lastname: "",
+    name: "",
     email: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
+    role: "0"
   })
   const dispatch = useDispatch()
 
@@ -31,13 +31,31 @@ const auth = () => {
     dispatch(loginUser(data))
   }
 
+  const calldispatch = (latitude, longitude) => {
+    dispatch(
+      registerUser({
+        ...data,
+        "coordinateX": latitude,
+        "coordinateY": longitude
+      })
+    )
+  }
+
   const handleRegister = () => {
-    dispatch(registerUser(data))
+    let coordinateX
+    let coordinateY
+    console.log("btn clicked")
+    // console.log(
+    navigator.geolocation.getCurrentPosition((position) => {
+      calldispatch(position.coords.latitude, position.coords.longitude)
+    })
+    // )
+    
   }
 
   return (
     <Layout>
-      <div className="authContainer">
+      {/* <div className="authContainer"> */}
         {authLogin ? (
           <div className="authcenter">
             <InputBox
@@ -54,9 +72,11 @@ const auth = () => {
               handleChange={handleChange}
               placeholder="j39#hnk2"
             />
-            <button className="btn" onClick={handleLogin}>
-              Login
-            </button>
+            <div>
+              <button className="btn" onClick={handleLogin}>
+                Login
+              </button>
+            </div>
             <p className="smClickText" onClick={() => setAuthLogin(!authLogin)}>
               {authLogin
                 ? "New User? Register Here"
@@ -65,24 +85,14 @@ const auth = () => {
           </div>
         ) : (
           <div className="authcenter">
-            <div className="nameRegister">
-              <InputBox
-                name="firstname"
-                title="First Name"
-                type="text"
-                handleChange={handleChange}
-                placeholder="Prasang"
-                doHalf={true}
-              />
-              <InputBox
-                name="lastname"
-                title="last Name"
-                type="text"
-                handleChange={handleChange}
-                placeholder="Maheshwari"
-                doHalf={true}
-              />
-            </div>
+            <InputBox
+              name="name"
+              title="Name"
+              type="text"
+              handleChange={handleChange}
+              placeholder="Prasang"
+            />
+
             <InputBox
               name="email"
               title="Email"
@@ -104,15 +114,29 @@ const auth = () => {
               handleChange={handleChange}
               placeholder="j39#hnk2"
             />
-            <button className="btn" onClick={handleRegister}>
-              Register
-            </button>
+            <label for="role" className="inputLabel">
+              Choose your role:
+            </label>
+            <select
+              id="role"
+              name="Role"
+              className="inputBox"
+              onChange={(e) => handleChange(e)}
+            >
+              <option value="0">Vendor</option>
+              <option value="1">Manufacturer</option>
+            </select>
+            <div>
+              <button className="btn" onClick={handleRegister}>
+                Register
+              </button>
+            </div>
             <p className="smClickText" onClick={() => setAuthLogin(!authLogin)}>
               {authLogin ? "New User?" : "Already a User?"}
             </p>
           </div>
         )}
-      </div>
+      {/* </div> */}
     </Layout>
   )
 }
