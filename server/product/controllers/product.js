@@ -45,7 +45,7 @@ const insertProduct = async (req, res) => {
 }
 
 const searchProduct = async(req, res) => {
-    const {query} = req.body;
+    const {query} = req.query;
     const userId = req.userId
     try {
         console.log(query);
