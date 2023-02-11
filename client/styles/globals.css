@@ -49,6 +49,9 @@ body::before {
   align-items: center;
   justify-content: center;
   box-shadow: 0 3px #2f383c;
+  width: 40%;
+  min-width: 150px;
+  margin: 20px 0px;
 }
 
 .inputLabel {
@@ -59,6 +62,7 @@ body::before {
   margin: 7px 0px;
   font-size: 17px;
   font-weight: bold;
+  color: whitesmoke;
 }
 
 .inputLabelHalf {
@@ -92,4 +96,8 @@ body::before {
   font-size: 12px;
   font-weight: normal;
   color: #7c828d;
+}
+
+.txt{
+  color: whitesmoke;
 }
