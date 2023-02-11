@@ -5,7 +5,11 @@ import "@/styles/Footer.css";
 import "@/styles/Support.css";
 import "@/styles/scan.css";
 import "@/styles/auth.css";
+<<<<<<< HEAD
+import "@/styles/Home.css";
+=======
 import "@/styles/mintform.css";
+>>>>>>> 275893ad52f783aa399fea0bf044bdba225f935c
 import "@rainbow-me/rainbowkit/styles.css";
 import "@/styles/AddProductForm.css";
 import { wrapper } from "../redux/store";

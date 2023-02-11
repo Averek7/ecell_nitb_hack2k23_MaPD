@@ -13,7 +13,7 @@ function AddProductForm() {
             ...data,
             [e.target.name]: e.target.value
         })
-        //    console.log(data)
+
     }
 
 
@@ -43,7 +43,7 @@ function AddProductForm() {
                     </div>
                 </div>
                 <div className="form_btn">
-                <button type="submit"> Generate QR</button>
+                <button className="addProduct-button" type="submit">Generate QR</button>
                 </div>
             </div>
         </div>
