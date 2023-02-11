@@ -26,8 +26,8 @@ box-shadow: 0 3px #2F383C;
 .inputLabel {
   display: flex;
   flex-direction: column;
-  width: 40vw;
-  min-width: 280px;
+  /* width: 40vw; */
+  min-width: 240px;
   margin: 7px 0px;
   font-size: 17px;
   font-weight: bold;
