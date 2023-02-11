@@ -1,0 +1,27 @@
+.authContainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.authcenter{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #cccccc;
+    border-radius: 15px;
+}
+
+.nameRegister{
+    display: flex;  
+}
+
+.smClickText{
+    font-size:13px;
+    color: #555555;
+    cursor: pointer;
+    font-weight: bold;
+}
