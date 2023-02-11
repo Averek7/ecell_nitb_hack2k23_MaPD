@@ -23,9 +23,9 @@ export default function Home() {
 
   return (
     <Layout>
-      <div class="container">
-        <div class="card">
-          <div class="content">
+      <div className="container">
+        <div className="card">
+          <div className="content">
             <h2>01</h2>
             <h3> SCAN QR</h3>
             <Scan />
