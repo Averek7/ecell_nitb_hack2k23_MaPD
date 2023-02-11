@@ -3,6 +3,34 @@
   padding: 0px;
 }
 
+body {
+  /* min-height: 100vh; */
+  background: #161623;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(20% at right 80%);
+  z-index: 0.5;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 10% 10%);
+  z-index: 0.5;
+}
+
 .btn {
   padding: 30px 10px;
   font-size: 12px;
@@ -10,17 +38,17 @@
   border-radius: 15px;
   border: none;
   padding: 10px 30px;
-/* border-radius: 45px; */
-background-color: #0D0E0E;
-/* border-style: solid; */
-/* border-width: 5px; */
-/* border-color: #2F383C; */
-cursor: pointer;
-color: aliceblue;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 3px #2F383C;
+  /* border-radius: 45px; */
+  background-color: #0d0e0e;
+  /* border-style: solid; */
+  /* border-width: 5px; */
+  /* border-color: #2F383C; */
+  cursor: pointer;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px #2f383c;
 }
 
 .inputLabel {
