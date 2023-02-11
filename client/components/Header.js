@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import logo from "../assets/logo.png";
-import { FaUser } from "react-icons/fa";
+// import Image from "next/image";
+// import logo from "../assets/logo.png";
+// import { FaUser } from "react-icons/fa";
 import { useIsMounted } from "@/pages/hooks/useIsMounted";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+// import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useSigner } from "wagmi";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { ethers } from "ethers";
 import { useDispatch } from "react-redux";
 import { addContractAddresses, saveAddressAndSigner } from "@/redux/header";
@@ -13,7 +13,11 @@ import abi from "../assets/contract_data/Products.json";
 import nftAbi from "../assets/contract_data/nft.json";
 import DL_contract_address from "../assets/contract_data/ProductsAddress.json";
 import nft_contract_address from "../assets/contract_data/nftAddress.json";
-import Link from "next/link";
+// import Link from "next/link";
+
+import { FaHome } from "react-icons/fa";
+import { BsChat, BsFillPersonFill } from "react-icons/bs";
+import { IoIosAddCircleOutline, IoMdSettings } from "react-icons/io";
 
 const tabs = [
   {
@@ -69,7 +73,7 @@ function Header() {
 
   return (
     <div className="header-container">
-      <div className="logo-container">
+      {/* <div className="logo-container">
         <Image src={logo} width={80} />
       </div>
       <div className="header-list-content">
@@ -86,6 +90,36 @@ function Header() {
           <div>{mounted ? <FaUser size={18} /> : null}</div>
         </div>
         <ConnectButton />
+      </div> */}
+      <div className="Header">
+        <ul className="navbar">
+          <li className="navItems">
+            <a href="#">
+              <FaHome />
+            </a>
+          </li>
+          <li className="navItems">
+            <a href="#">
+              <BsFillPersonFill />
+            </a>
+          </li>
+          <li className="navItems active">
+            <a href="#">
+              <IoIosAddCircleOutline />
+            </a>
+          </li>
+          <li className="navItems">
+            <a href="#">
+              <IoMdSettings />
+            </a>
+          </li>
+          <li className="navItems">
+            <a href="#">
+              <BsChat />
+            </a>
+          </li>
+          <div id="marker"></div>
+        </ul>
       </div>
     </div>
   );
