@@ -8,28 +8,21 @@ import Desc from "@/components/Desc";
 import { useState } from "react";
 import Scan from "@/components/Scan";
 
-
-
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-
-
-  const [productId, setProductId] = useState('')
+  const [productId, setProductId] = useState("");
 
   const handleChange = (e) => {
     setProductId({
       // ...productId,
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
     //    console.log(data)
-  }
-
+  };
 
   return (
-
     <Layout>
-
       <div class="container">
         <div class="card">
           <div class="content">
@@ -43,10 +36,7 @@ export default function Home() {
         <div className="home-textBox">
           <input className="home-ProductID" type="text" name="productID" placeholder="Enter Product ID .." />
         </div>
-
       </div>
-
     </Layout>
-
   );
 }

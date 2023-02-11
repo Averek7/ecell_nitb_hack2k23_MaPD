@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     background: #161623;
 }
 body::before{
@@ -52,7 +52,7 @@ body::after{
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 1);
     border-left: 1px solid rgba(255, 255, 255, 1);
@@ -110,7 +110,7 @@ body::after{
 .home-textBox{
 
     background-color: white;
-    height: 80px;
+    height: 10vh;
     width: 100%;
     border: 2px solid whitesmoke;
     border-radius: 15px;
@@ -141,6 +141,73 @@ body::after{
 	caret-color: var(#6441a5);
 }
 
+@media screen and (max-width: 680px) {
+
+
+    body{
+        display: flex;
+        /* justify-content: center;
+        align-items: center; */
+        min-height: 100vh;
+        background: #161623;
+    }
+
+    .container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        max-width: 1200px;
+        flex-wrap: wrap;
+        z-index: 1;
+    }
+
+    .container .card {
+
+        position: relative;
+        width: 60vh;
+        height: 80vh;
+        /* margin: 30px; */
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 1);
+        border-left: 1px solid rgba(255, 255, 255, 1);
+        backdrop-filter: blur(5px);
+        margin-top: 120px;
+
+    }
+
+    .container .card .content{
+        padding: 20px;
+        text-align: center;
+        transition: 0.5s;
+        transform: translateY(-20px);
+        /* opacity: 0; */
+        transition: 0.5s;
+    }
+    
+    .home-textBox{
+
+        background-color: white;
+        height: 80px;
+        width: 100%;
+        border: 2px solid whitesmoke;
+        border-radius: 15px;
+        display: flex;
+        margin-top: 10vh;
+        /* justify-content: center; */
+        align-items: flex-start;
+    
+    }
+
+}
 
 
 /* 
