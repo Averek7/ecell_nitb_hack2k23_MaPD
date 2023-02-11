@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Support from "@/components/Support";
 import Desc from "@/components/Desc";
 import { useState } from "react";
+import Scan from "@/components/Scan";
 
 
 
@@ -28,43 +29,20 @@ export default function Home() {
   return (
 
     <Layout>
-      <div className="home-container">
-        <div className="home-card1">
-          <div className="home-lottie-card">
 
-
-          </div>
-          <div className="home-input-id">
-            <h2 className="home-h2">
-              Enter the product id to search for originality of a product and see the supply chain!
-            </h2>
-            <div className="home-textbox">
-              <input type="text" name="productId" id="" onChange={(e) => handleChange(e)} />
-            </div>
-            <button className="home-input-button" type="submit">Enter</button>
-
+      <div class="container">
+        <div class="card">
+          <div class="content">
+            <h2>01</h2>
+            <h3> SCAN QR</h3>
+            <Scan />
+            <p>Scan a Qr to check the validation of the product and previous vendors</p>
           </div>
         </div>
 
-        <div className="home-or">
-          --------------------  OR --------------------
+        <div className="home-textBox">
+          <input className="home-ProductID" type="text" name="productID" placeholder="Enter Product ID .." />
         </div>
-
-        <div className="home-card2">
-          <div className="home-lottie-card">
-
-
-          </div>
-
-          <div className="home-scan-box">
-              You can also Scan QR code to get the desired details
-          </div>
-
-          <button className="home-scan-button" type="submit">SCAN QR</button>
-
-        </div>
-
-
 
       </div>
 
