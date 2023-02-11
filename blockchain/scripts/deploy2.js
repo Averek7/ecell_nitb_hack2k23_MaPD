@@ -14,10 +14,10 @@ async function main() {
 
   await zappnft.deployed();
 
-  await zappnft.transferOwnership("0x94e99f2247f855841e73a82c0562f2bfd760c1fe");
+//   await zappnft.transferOwnership("0x94e99f2247f855841e73a82c0562f2bfd760c1fe");
 //   saveFiles(zappnft,"ZD");
   console.log(
-    `Zapp NFT Contract deploted to ${zappnft.address}`
+    `NFT Contract deploted to ${zappnft.address}`
   );
 }
 
