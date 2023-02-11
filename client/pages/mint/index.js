@@ -7,10 +7,9 @@ import { mintQR } from "@/redux/nftQr";
 import { setSuccess } from "@/redux/slices/success";
 import { setError } from "@/redux/slices/error";
 import InputBox from "@/components/InputBox";
-import axios from "axios";
 
-const projectId = "2Hudfo5sCvhNRgff6cSVH6o7OCJ";
-const projectSecret = "ebebdc46b40438ee646c43cba5dbca9e";
+const projectId = "2LaElUcAr2SYK3KuPpor7Xlc5hB";
+const projectSecret = "0947f1f7854b4631c685a30c20e51d4d";
 
 function index() {
   const dispatch = useDispatch();
@@ -21,7 +20,7 @@ function index() {
   });
   const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDhhQTQzM0RkY2M4QzM5YWJFQzdmNzZDM2REQjlFOTBhMWY3RTk2RjMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjkxMjcxMDk3NjMsIm5hbWUiOiJsZW5kTmZ0In0.7Zu-wSF34-7GlU5rVIXAvrIczw6MQYT4yV7vOVU9pis`;
   const storage = new Web3Storage({ token: token });
-  const { walletAddress, nft_contract_address } = useSelector(
+  const { walletAddress, signer, nftInstances } = useSelector(
     (state) => state.header
   );
 
@@ -48,39 +47,26 @@ function index() {
     });
     client
       .add(JSON.stringify(data))
-      .then((res) => {
+      .then(async (res) => {
         console.log("result", `https://ipfs.io/ipfs/${res.path}`);
         const dataIpfs = `https://ipfs.io/ipfs/${res.path}`;
         console.log("address", walletAddress);
         console.log("dataIPFS", dataIpfs);
-        axios
-          .post(
-            `https://api.defender.openzeppelin.com/autotasks/56e64845-fc8f-48d6-9913-cb4b8ea69e85/runs/webhook/88095ac7-42ee-4e07-8ee9-624a30016c9e/TxSNrFSbS2LwNitdGh6ja4`,
-            { reciever: walletAddress, tokenUri: dataIpfs }
-          )
-          .then((response) => {
-            console.log("minted on Blockchain", response);
-            const checks = parseInt(JSON.parse(response?.data?.result).hex, 16);
-            console.log(check);
 
-            dispatch(
-              mintQR({
-                ...data,
-                contract_address: nft_contract_address,
-                token_id: check - 1,
-              })
-            )
-              .unwrap()
-              .then(() => {
-                dispatch(setSuccess("NFT minted Successfully !"));
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        let qrNftTx = await nftInstances.safeMint(walletAddress, dataIpfs);
+        console.log("Mining...", qrNftTx.hash);
+        // Status
+        let tx = await qrNftTx.wait();
+        // Loader
+        console.log("Mined !", tx);
+
+        // let event = tx.event[0];
+        // let value = event.args[2];
+        // let tokenId = value.toNumber();
+
+        console.log(
+          `Mined, see transaction: https://mumbai.polygonscan.com/tx/${qrNftTx.hash}`
+        );
       })
       .catch((err) => {
         console.log("Error: ", err);
