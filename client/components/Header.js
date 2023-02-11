@@ -10,6 +10,7 @@ import { ethers } from "ethers";
 import { useDispatch } from "react-redux";
 import { addContractAddresses, saveAddressAndSigner } from "@/redux/header";
 import abi from "../assets/contract_data/Products.json";
+import nftAbi from "../assets/contract_data/nft.json";
 import DL_contract_address from "../assets/contract_data/ProductsAddress.json";
 import nft_contract_address from "../assets/contract_data/nftAddress.json";
 
@@ -41,6 +42,12 @@ function Header() {
     signer
   );
 
+  const nftInstances = new ethers.Contract(
+    nft_contract_address.address,
+    nftAbi.abi,
+    signer
+  );
+
   useEffect(() => {
     dispatch(
       addContractAddresses({
@@ -49,7 +56,7 @@ function Header() {
       })
     );
     address && signer
-      ? dispatch(saveAddressAndSigner({ address, signer, instances }))
+      ? dispatch(saveAddressAndSigner({ address, signer, instances, nftInstances }))
       : null;
   }, [signer]);
 

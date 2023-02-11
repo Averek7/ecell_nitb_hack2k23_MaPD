@@ -7,6 +7,7 @@ export const headerSlice = createSlice({
     walletAddress: null,
     signer: null,
     instances: null,
+    nftInstances: null,
     DL_contract_address: null,
     nft_contract_address: null,
   },
@@ -18,6 +19,7 @@ export const headerSlice = createSlice({
       state.walletAddress = action.payload.address;
       state.signer = action.payload.signer;
       state.instances = action.payload.instances;
+      state.nftInstances = action.payload.nftInstances;
     },
     addContractAddresses: (state, action) => {
       state.DL_contract_address = action.payload.DL_contract_address;
