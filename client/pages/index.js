@@ -26,8 +26,8 @@ export default function Home() {
       <div className="container">
         <div className="card">
           <div className="content">
-            <h2>01</h2>
-            <h3> SCAN QR</h3>
+            <h4>QR</h4>
+            <h3>SCAN</h3>
             <Scan />
             <p>Scan a Qr to check the validation of the product and previous vendors</p>
           </div>
@@ -35,6 +35,7 @@ export default function Home() {
 
         <div className="home-textBox">
           <input className="home-ProductID" type="text" name="productID" placeholder="Enter Product ID .." />
+          <button className="home-Show-Btn" type="submit" >SHOW</button>
         </div>
       </div>
     </Layout>

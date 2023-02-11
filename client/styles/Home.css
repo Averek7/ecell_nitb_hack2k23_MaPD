@@ -44,20 +44,21 @@ body::after{
 }
 .container .card{
     position: relative;
-    width: 44vh;
-    height: 77vh;
-    margin: 30px;
+    width: 50vh;
+    height: 70vh;
+    margin: 20px;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: inherit;
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 1);
     border-left: 1px solid rgba(255, 255, 255, 1);
     backdrop-filter: blur(5px);
-    margin-top: 47px;
+    margin-top: 28px;
+    padding-top: 40px;
 
 }
 .container .card .content{
@@ -74,7 +75,7 @@ body::after{
     transform: translateY(0px);
     opacity: 1;
 } */
-.container .card .content h2{
+.container .card .content h4{
     position: absolute;
     top: -80px;
     right: 30px;
@@ -92,6 +93,7 @@ body::after{
     color: #fff;
     font-weight: 300;
     margin-top: 30px;
+    padding-top: 20px;
 }
 .container .card .content a{
     position: relative;
@@ -111,10 +113,11 @@ body::after{
 
     /* background-color: white; */
     height: 10vh;
-    width: auto;
+    width: 50vh;
     /* border: 2px solid whitesmoke; */
     border-radius: 15px;
     display: flex;
+    flex-direction: row;
     text-align: center;
     align-items: flex-start;
 
@@ -128,11 +131,11 @@ body::after{
     width: 80%; */
     /* margin-left: 20%; */
     width: 100%;
-	height: 6vmin;
+	height: 6vh;
 	border: none;
 	border-radius: 1rem;
 	outline: none;
-	font-size: 2.5vmin;
+	font-size: 2.5vh;
 	font-weight: bold;
     text-align: center;
 	/* padding: 0 4vmin; */
@@ -141,6 +144,74 @@ body::after{
 	color: var(#6441a5);
 	caret-color: var(#6441a5);
 }
+
+/* .home-Show-Btn{
+
+    width: 50%;
+	height: 6vmin;
+	border: none;
+	border-radius: 1rem;
+	outline: none;
+	font-size: 2vmin;
+	font-weight: bold;
+    text-align: center;
+	padding: 0 4vmin;
+	box-shadow: var(-0.2rem -0.2rem 0.5rem var(--white) 0.2rem 0.2rem 0.5rem var(#c8d0e7));
+	background: var(-#e4ebf5);
+	color: var(#6441a5);
+	caret-color: var(#6441a5);    
+
+
+} */
+
+
+.home-Show-Btn{
+
+    background-color: #2f2b26; 
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 6vh;
+    border: none;
+    font-size: 2.5vh;
+    box-shadow: 0 5px #999;
+    transition: 1s;
+    font-family: monospace;
+
+}
+
+
+.home-Show-Btn:hover {
+    background-color: rgb(75, 68, 68);
+    border: white;
+    border-radius: 10px;
+    height: 6vh;
+    border: none;
+    font-size: 2.5vh;
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: 0.6s;
+ }
+
+ .home-Show-Btn:active {
+    
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: translateY(4px);
+
+ }
+/* 
+  .home-Show-Btn:active {
+    background-color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  } */
 
 @media screen and (max-width: 680px) {
 
@@ -197,8 +268,8 @@ body::after{
     .home-textBox{
 
         /* background-color: white; */
-        height: 60vh;
-        width: 100%;
+        height: 30vh;
+        width: 50vh;
         /* border: 2px solid whitesmoke; */
         border-radius: 15px;
         display: flex;
@@ -217,7 +288,7 @@ body::after{
     width: 80%; */
     /* margin-left: 20%; */
     width: 100%;
-	height: 15vmin;
+	height: 12vmin;
 	border: none;
 	border-radius: 1rem;
 	outline: none;
@@ -230,6 +301,27 @@ body::after{
 	color: var(#6441a5);
 	caret-color: var(#6441a5);
 }
+
+.home-Show-Btn{
+
+    background-color: #2f2b26; 
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 12vmin;
+    width: 20vh;
+    border: none;
+    font-size: 5vmin;
+    box-shadow: 0 5px #999;
+    transition: 1s;
+    font-family: monospace;
+
+}
+
+
 
 }
 
