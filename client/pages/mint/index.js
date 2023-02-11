@@ -78,6 +78,7 @@ function index() {
           `Mined, see transaction: https://mumbai.polygonscan.com/tx/${qrNftTx.hash}`
         );
         setLocalLoading(false);
+        dispatch(setSuccess(`Minted Successfully with ${qrNftTx.hash}`));
       })
       .catch((err) => {
         console.log("Error: ", err);
@@ -100,6 +101,7 @@ function index() {
           ...data,
           image: `https://ipfs.io/ipfs/${res}/${nFile[0].name}`,
         });
+        // dispatch(setSuccess("Uploaded"));
       })
       .catch((err) => {
         setLocalLoading(false);
@@ -107,6 +109,30 @@ function index() {
       });
     console.log(data.image);
   };
+
+  // const downloadQRCode = (e) => {
+  //   e.preventDefault();
+  //   let canvas = qrRef.current.querySelector("canvas");
+  //   let image = canvas.toDataURL("image/png");
+  //   let anchor = document.createElement("a");
+  //   anchor.href = image;
+  //   anchor.download = `qr-code.png`;
+  //   document.body.appendChild(anchor);
+  //   anchor.click();
+  //   document.body.removeChild(anchor);
+  //   setUrl("");
+  // };
+
+  // const qrcode = (
+  //   <QRCodeCanvas
+  //     id="qrCode"
+  //     value={`https://voices.uchicago.edu/201702busn3910001/2018/04/23/pitch-blockchain-in-the-supply-chain/`}
+  //     size={300}
+  //     bgColor={"#fff"}
+  //     level={"H"}
+  //   />
+  // );
+
   return (
     <div>
       <Layout>
