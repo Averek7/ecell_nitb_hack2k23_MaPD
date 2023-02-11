@@ -5,6 +5,7 @@ import "@/styles/Footer.css";
 import "@/styles/Support.css";
 import "@/styles/scan.css";
 import "@/styles/auth.css";
+import "@/styles/ProductForm.css";
 import "@/styles/Home.css";
 import "@/styles/mintform.css";
 import "@rainbow-me/rainbowkit/styles.css";

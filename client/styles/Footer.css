@@ -4,7 +4,7 @@
   bottom: 0;
   width: 100%;
   color: #fff;
-  position: fixed;
+  position: relative;
   background-color: black;
 }
 
@@ -28,3 +28,10 @@
   padding: 0 15px;
 }
 
+
+@media screen and (max-width: 680px) {
+
+
+
+
+}

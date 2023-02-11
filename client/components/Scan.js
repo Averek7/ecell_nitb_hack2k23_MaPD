@@ -1,16 +1,15 @@
 //scan.js
 import React, { useState, useRef, useEffect } from "react";
 import { QrReader } from "react-qr-reader";
-import styles from "../styles/Home.module.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+// import styles from "../styles/Home.module.css";
+// import Header from "@/components/Header";
+// import Footer from "@/components/Footer";
 
 function Scan() {
   const [data, setData] = useState("No result");
 
   return (
     <>
-      {/* <Header /> */}
 
       <div className="QrMain">
         <div className="QrScannerContainer">
@@ -30,8 +29,6 @@ function Scan() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

@@ -1,0 +1,34 @@
+.ProductForm{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: larger;
+    width: 100%;
+    border: 2px solid black;
+
+}
+
+
+
+.Product_form_dyn_fields{
+
+    margin: 5px;
+
+}
+
+
+.product_form_button{
+
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+
+
+}
+
+.product_form_button{
+    margin: 10px;
+}

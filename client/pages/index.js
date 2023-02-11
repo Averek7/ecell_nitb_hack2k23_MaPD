@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Support from "@/components/Support";
 import Desc from "@/components/Desc";
 import { useState } from "react";
+import Scan from "@/components/Scan";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -20,5 +21,23 @@ export default function Home() {
     //    console.log(data)
   };
 
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <div className="container">
+        <div className="card">
+          <div className="content">
+            <h2>01</h2>
+            <h3> SCAN QR</h3>
+            <Scan />
+            <p>Scan a Qr to check the validation of the product and previous vendors</p>
+          </div>
+        </div>
+
+        <div className="home-textBox">
+          <input className="home-ProductID" type="text" name="productID" placeholder="Enter Product ID .." />
+        </div>
+      </div>
+    </Layout>
+  );
+
 }
