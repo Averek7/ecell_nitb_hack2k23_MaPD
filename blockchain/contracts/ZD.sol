@@ -6,12 +6,12 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract ZD is ERC721, ERC721URIStorage, Ownable {
+contract mapd is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("MinterDoc", "MinterDoc") {}
+    constructor() ERC721("MintQR", "MintQR") {}
 
     function safeMint(
         address to,

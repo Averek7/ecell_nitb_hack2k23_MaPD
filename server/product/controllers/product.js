@@ -1,7 +1,8 @@
 import { body, validationResult } from 'express-validator';
 import log from '../../log.js';
-import { insertProductDb, insertProductId, searchProductDb } from '../db/product.js';
+import { changeIpfs, fetchIpfsDb, insertProductDb, insertProductId, searchProductDb } from '../db/product.js';
 import QRCode from 'qrcode';
+import { pool } from '../../connections/db.js';
 const formatSearchKey = (searchVal) => {
     // const searchVal = query.trim().split(' ');
     const n = searchVal.length;
@@ -110,4 +111,46 @@ const generateQR = async (req, res) => {
     }
 }
 
-export { insertProduct, searchProduct, generateQR };
+const updateIpfs = async(req, res) => {
+    const {uuid, ipfs} = req.body;
+
+    try {
+        const re = await changeIpfs({ ipfs, uuid });
+
+        console.log(re);
+
+        return res.status(200).json({ 
+            message: 'success',
+            response: re[0]
+        })
+    } catch (err) {
+        log.error({ err }, '[updateIpfs][error]');
+
+        return res.status(500).json({
+            message: 'error'
+        })
+    }
+}
+
+const fetchIpfs = async(req, res) => {
+    const { uuid } = req.query;
+
+    try {
+        const [re] = await fetchIpfsDb({ uuid });
+
+        console.log(re);
+
+        return res.status(200).json({
+            message: 'success',
+            response: re[0]
+        })
+    } catch (err) {
+        log.error({err}, '[fetchIpfs][error]')
+
+        return res.status(500).json({
+            message: 'INTRENAL SERVER ERROR'
+        })
+    }
+}
+
+export { insertProduct, searchProduct, generateQR, updateIpfs, fetchIpfs };

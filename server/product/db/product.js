@@ -29,4 +29,20 @@ const insertProductId = (payload) => {
     return pool.query(query, [payload.uuid]);
 }
 
-export { insertProductDb, searchProductDb, insertProductId };
+const changeIpfs = (payload) => {
+    const query = `UPDATE product_map pm
+    SET pm.ipfs = ?
+    WHERE pm.unique_id = ?;`;
+
+    return pool.query(query, [payload.ipfs, payload.uuid]);
+}
+
+const fetchIpfsDb = (payload) => {
+    const query = `SELECT pm.ipfs as ipfs
+    FROM product_map pm
+    WHERE pm.unique_id = ?;`;
+
+    return pool.query(query, [payload.uuid]);
+}
+
+export { insertProductDb, searchProductDb, insertProductId, changeIpfs, fetchIpfsDb };
