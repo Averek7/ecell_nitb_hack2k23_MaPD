@@ -4,11 +4,14 @@
   padding: 8px;
   width: 98vw;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  z-index: 3;
 }
 .logo-container {
   margin: 10px;
   z-index: 1;
+  position: absolute;
+  left: 0;
 }
 
 .Header {
@@ -16,16 +19,18 @@
   height: 100px;
   align-items: center;
   justify-content: center;
+  z-index: inherit;
   /* margin-bottom: -10000px; */
 }
 
 .navbar {
   position: relative;
+  z-index: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #181821;
   box-shadow: 0 5px 25px rgba(255, 255, 255, 0.25);
 }
 
@@ -111,7 +116,7 @@
   margin-left: 200px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1500px) {
   .Header {
     width: 100vw;
     display: flex;
@@ -120,7 +125,7 @@
   }
 
   .navbar {
-    width: 360px;
+    padding: 10px 20px;
     /* opacity: 1; */
   }
 

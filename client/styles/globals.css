@@ -6,6 +6,7 @@
 body {
   /* min-height: 100vh; */
   background: #161623;
+  overflow-x: hidden;
 }
 
 body::after {
@@ -37,7 +38,7 @@ body::before {
   font-weight: bold;
   border-radius: 15px;
   border: none;
-  padding: 10px 30px;
+  padding: 25px 25px;
   /* border-radius: 45px; */
   background-color: #0d0e0e;
   /* border-style: solid; */
@@ -49,16 +50,42 @@ body::before {
   align-items: center;
   justify-content: center;
   box-shadow: 0 3px #2f383c;
-  width: 40%;
-  min-width: 150px;
-  margin: 20px 0px;
+  min-width: 120px;
+  margin: 5px;
+  max-width: 160px;
 }
 
-.btn-sm{
+.btn-sm {
   font-size: 10px;
 }
 
-.btn:hover {background-color: #000}
+.logo-btn{
+  min-width: 10px;
+}
+
+.bcBtn{
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  /* display: none; */
+}
+
+.logo-btn {
+  min-width: 10px;
+}
+
+.bcBtn {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  /* display: none; */
+}
+
+.btn:hover {
+  background-color: #000;
+}
 
 .btn:active {
   transform: translateY(4px);
@@ -220,3 +247,9 @@ body::before {
 .nftcardHead {
   padding: 0px 10px;
 }
+
+/* .bc-btn{
+  position: fixed;
+  top: 5;
+  right: 5;
+} */

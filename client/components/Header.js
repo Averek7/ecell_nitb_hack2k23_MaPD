@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import { useIsMounted } from "@/pages/hooks/useIsMounted";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { YourButton } from "./Header.data";
 import { useAccount, useSigner } from "wagmi";
 import { useRouter } from "next/router";
@@ -16,10 +15,11 @@ import nft_contract_address from "../assets/contract_data/nftAddress.json";
 
 import { FaHome } from "react-icons/fa";
 import { BsCollectionFill, BsFillPersonFill } from "react-icons/bs";
-import { IoIosAddCircleOutline, IoMdSettings } from "react-icons/io";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 import Link from "next/link";
+import { logout } from "../redux/slices/auth";
 
 const tabs = [
   {
@@ -41,11 +41,14 @@ const tabs = [
 ];
 
 function Header() {
+  // const router = useRouter()
   const mounted = useIsMounted();
   const dispatch = useDispatch();
   const { address } = useAccount();
   const { data: signer } = useSigner();
   const [addressfinal, setAddressfinal] = useState(null);
+  const token = mounted ? localStorage.getItem("token") : null;
+  const router = useRouter();
 
   const instances = new ethers.Contract(
     DL_contract_address.address,
@@ -73,10 +76,15 @@ function Header() {
       : null;
   }, [signer]);
 
-  const router = useRouter();
+  const doLogout = () => {
+    dispatch(logout());
+    if (!localStorage.getItem("token")) {
+      router.push("/");
+    }
+  };
 
   return (
-    <div className="header-container">
+    <>
       <div className="logo-container">
         <Image src={logo} width={80} height={80} />
       </div>
@@ -120,10 +128,21 @@ function Header() {
           <div id="marker"></div>
         </ul>
       </div>
-      <div className="button-container">
-        <YourButton />
+      <div className="bcBtn">
+        {token ? (
+          <>
+            <YourButton />
+            <button className="btn btn-sm" onClick={() => doLogout()}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <button className="btn" onClick={() => router.push("/auth")}>
+            Login
+          </button>
+        )}
       </div>
-    </div>
+    </>
   );
 }
 

@@ -55,7 +55,7 @@ export const YourButton = () => {
                 )
               }
               return (
-                <div style={{ display: "flex", gap: 12 }}>
+                <div  >
                   {/* <button
                     onClick={openChainModal}
                     style={{ display: "flex", alignItems: "center" }}
@@ -85,15 +85,16 @@ export const YourButton = () => {
                     {chain.name}
                   </button> */}
                   <button
-                    className="btn btn-sm"
+                    className="btn logo-btn"
                     onClick={openAccountModal}
                     type="button"
+                    
                   >
                     {chain.hasIcon && (
                       <div
                         style={{
                           background: chain.iconBackground,
-                          width: 38,
+                          width: 20,
                           height: 17,
                           borderRadius: 999,
                           overflow: "hidden",
@@ -109,10 +110,7 @@ export const YourButton = () => {
                         )}
                       </div>
                     )}
-                    {account.displayName}
-                    {account.displayBalance
-                      ? ` (${account.displayBalance})`
-                      : ""}
+                    
                   </button>
                 </div>
               )
