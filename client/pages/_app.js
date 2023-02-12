@@ -10,6 +10,7 @@ import "@/styles/Home.css";
 import "@/styles/mintform.css";
 import "@/styles/Dashboard.css";
 import "@/styles/Collection.css";
+import "@/styles/productId.css"
 import "@rainbow-me/rainbowkit/styles.css";
 import { wrapper } from "../redux/store";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
