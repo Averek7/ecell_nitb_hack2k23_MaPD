@@ -26,7 +26,7 @@ const TransactionCard = ({ item, active }) => {
     );
     console.log(response.data);
   };
-  getNft();
+//   getNft();
   return (
     <div className="nftcard" style={{ margin: "5px" }}>
       <div className="nftcardHead">

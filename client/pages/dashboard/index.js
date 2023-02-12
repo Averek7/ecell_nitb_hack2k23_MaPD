@@ -11,9 +11,9 @@ function Dashboard() {
   return (
     <Layout>
       <div className="detailContainer">
-        <div className="container">
-          <div className="card">
-            <div className="content">
+        <div className="Dcontainer">
+          <div className="cards">
+            <div className="contents">
               <div className="img">
                 <Image src={logo} alt="" />
               </div>
