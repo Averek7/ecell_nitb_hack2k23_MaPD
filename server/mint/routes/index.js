@@ -5,11 +5,11 @@ import { addMintHis, fetchHis } from '../controllers/mint.js';
 
 const router = express.Router();
 
-router.post('/addMintHistory', verifyToken, async(req, res) => {
+router.post('/addMintHistory', async(req, res) => {
     addMintHis(req, res)
 })
 
-router.get('/fetchHistory', verifyToken, async(req, res) => {
+router.get('/fetchHistory', async(req, res) => {
     fetchHis(req, res);
 })
 

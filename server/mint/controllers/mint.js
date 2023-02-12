@@ -3,10 +3,10 @@ import log from '../../log.js';
 import { addMint, fetchHistory } from '../db/mint.js';
 
 const addMintHis = async(req, res) => {
-    const {address, title, description, image} = req.body;
+    const {address, title, description, image, uuid} = req.body;
 
     try {
-        const re = await addMint({ address, title, description, image });
+        const re = await addMint({ address, title, description, image, uuid });
 
         return res.status(200).json({
             message: 'success'

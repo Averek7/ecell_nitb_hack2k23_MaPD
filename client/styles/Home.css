@@ -133,12 +133,12 @@ body::after {
   font-size: 2.5vh;
   font-weight: bold;
   text-align: center;
+  color: black;
   /* padding: 0 4vmin; */
   box-shadow: var(
     -0.2rem -0.2rem 0.5rem var(--white) 0.2rem 0.2rem 0.5rem var(#c8d0e7)
   );
   background: var(-#e4ebf5);
-  color: var(#6441a5);
   caret-color: var(#6441a5);
 }
 /* 
