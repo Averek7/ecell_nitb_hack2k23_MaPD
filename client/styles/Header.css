@@ -1,83 +1,18 @@
-/* .header-container {
+.header-container {
   color: #000;
   display: flex;
   padding: 8px;
+  width: 98vw;
   align-items: center;
-  background-color: #f3dbc5;
   justify-content: space-between;
 }
-
-.header-list-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 0 20px;
-}
-
-.header-content {
-  list-style: none;
-  display: flex;
-  margin-right: 25px;
-}
-.header-content li {
-  padding: 18px;
-  margin: 0 8px;
-  font-weight: bold;
-  position: relative;
-  display: inline-block;
-}
-.header-content li::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 3px;
-  bottom: 0;
-  left: 0;
-  background-color: burlywood;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.header-content li:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
 .logo-container {
-  margin: 5px;
+  margin: 10px;
+  z-index: 1;
 }
-.prof {
-  padding: 8px;
-  margin-right: 30px;
-  border-radius: 25px;
-  border: 5px solid #e7aa74;
-}
-.prof-btn-container {
-  display: flex;
-}
-.prof:hover {
-  background-color: #f5bf8f;
-}
-
-
-@media screen and (max-width: 773px) {
-
-
-  .header-container {
-    color: #000;
-    display: flex;
-    padding: 8px;
-    align-items: center;
-    background-color: #f3dbc5;
-    justify-content: space-evenly;
-  }
-
-
-} */
 
 .Header {
   display: flex;
-  width: 100vw;
   height: 100px;
   align-items: center;
   justify-content: center;
@@ -211,58 +146,57 @@
     cursor: pointer;
   }
 
+  #marker {
+    position: absolute;
+    top: 0;
+    transition: 0.5s;
+    z-index: 1;
+  }
 
-#marker {
-  position: absolute;
-  top: 0;
-  transition: 0.5s;
-  z-index: 1;
-}
+  #marker::before {
+    content: " ";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+  }
 
-#marker::before {
-  content: " ";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 40px;
-  border-radius: 10px;
-}
-
-.navbar .navItems:nth-child(1):hover ~ #marker::before {
-  background: #5da6ff;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
-    0 0 60px #5da6ff;
-  cursor: pointer;
-  margin-left: -200px;
-}
-.navbar li:nth-child(2):hover ~ #marker::before {
-  background: #5da6ff;
-  cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
-    0 0 60px #5da6ff;
-  margin-left: -100px;
-}
-.navbar li:nth-child(3):hover ~ #marker::before {
-  background: #5da6ff;
-  cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
-    0 0 60px #5da6ff;
-  /* margin-left: 100px; */
-}
-.navbar li:nth-child(4):hover ~ #marker::before {
-  background: #5da6ff;
-  cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
-    0 0 60px #5da6ff;
-  margin-left: 100px;
-}
-.navbar li:nth-child(5):hover ~ #marker::before {
-  background: #5da6ff;
-  cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
-    0 0 60px #5da6ff;
-  margin-left: 200px;
-}
+  .navbar .navItems:nth-child(1):hover ~ #marker::before {
+    background: #5da6ff;
+    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+      0 0 60px #5da6ff;
+    cursor: pointer;
+    margin-left: -200px;
+  }
+  .navbar li:nth-child(2):hover ~ #marker::before {
+    background: #5da6ff;
+    cursor: pointer;
+    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+      0 0 60px #5da6ff;
+    margin-left: -100px;
+  }
+  .navbar li:nth-child(3):hover ~ #marker::before {
+    background: #5da6ff;
+    cursor: pointer;
+    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+      0 0 60px #5da6ff;
+    /* margin-left: 100px; */
+  }
+  .navbar li:nth-child(4):hover ~ #marker::before {
+    background: #5da6ff;
+    cursor: pointer;
+    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+      0 0 60px #5da6ff;
+    margin-left: 100px;
+  }
+  .navbar li:nth-child(5):hover ~ #marker::before {
+    background: #5da6ff;
+    cursor: pointer;
+    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+      0 0 60px #5da6ff;
+    margin-left: 200px;
+  }
 }
