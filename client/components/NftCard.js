@@ -7,15 +7,18 @@ function NftCard() {
   const { address } = useAccount();
   return (
     <div>
-      <div className="container">
-        <div className="card">
-          <div className="content">
+      <div className="Ncontainer">
+        <div className="Ncard">
+          <div className="Ncontent">
             <div className="img">
               <Image src={logo} alt="" />
             </div>
             <div className="contentBx">
               <>
-                <div className="nameAddress" style={{ fontSize: "15px" }}>
+                <div
+                  className="nameAddress"
+                  style={{ fontSize: "15px", textAlign: "center" }}
+                >
                   {address?.slice(0, 7)}....{address?.slice(32, 37)}
                 </div>
               </>
@@ -29,8 +32,8 @@ function NftCard() {
                   margin: "5px",
                 }}
               >
-                <span style={{ padding: "2px", margin: "5px" }}>Email</span>
-                <button className="btn mintBtn">Transfer Request</button>
+                <span style={{ padding: "0px", margin: "0px" }}>Email</span>
+                <button className="btn mintBtn">Request</button>
               </div>
             </div>
           </div>
