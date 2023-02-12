@@ -1,6 +1,5 @@
 .header-container {
   color: #000;
-  /* position: fixed; */
   display: flex;
   padding: 8px;
   width: 98vw;
@@ -12,7 +11,7 @@
   margin: 10px;
   z-index: 1;
   position: absolute;
-  left: 2;
+  left: 0;
 }
 
 .Header {

@@ -21,7 +21,7 @@ router.post('/updateIpfs', verifyToken, async(req, res) => {
     updateIpfs(req, res);
 })
 
-router.get('/fetchIpfs', verifyToken, async(req, res) => {
+router.get('/fetchIpfs', async(req, res) => {
     fetchIpfs(req, res);
 })
 
