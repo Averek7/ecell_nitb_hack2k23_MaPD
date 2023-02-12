@@ -133,12 +133,12 @@ body::after {
   font-size: 2.5vh;
   font-weight: bold;
   text-align: center;
+  color: black;
   /* padding: 0 4vmin; */
   box-shadow: var(
     -0.2rem -0.2rem 0.5rem var(--white) 0.2rem 0.2rem 0.5rem var(#c8d0e7)
   );
   background: var(-#e4ebf5);
-  color: var(#6441a5);
   caret-color: var(#6441a5);
 }
 /* 
@@ -190,6 +190,38 @@ body::after {
     transform: translateY(4px);
   } */
 
+<<<<<<< HEAD
+  .home-Show-Btn {
+    position: relative;
+    width: 80px;
+    height: 45px;
+    margin-left: 10px;
+    /* border-radius: 10%; */
+    /* background: #fff; */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 -5px 5px rgba(0,0,0,0.3),
+                0 5px 10px rgba(0,0,0,0.2),
+                0 10px 15px rgba(0,0,0,0.2);
+    margin-top: 2px;
+    background-color: #181821;
+    box-shadow: 0 5px 25px rgb(255 255 255 / 25%);
+    transition: 0.5s;
+
+  }
+
+
+  .home-Show-Btn.active {
+    color: #ff669a;
+    box-shadow: inset 0 -7px 5px rgba(141, 50, 112, 0.843),
+                inset 0 5px 10px rgba(255, 255, 255, 0.603);
+  }
+=======
 .home-Show-Btn {
   position: relative;
   width: 80px;
@@ -213,6 +245,7 @@ body::after {
   box-shadow: inset 0 -7px 5px rgba(0, 0, 0, 0.025),
     inset 0 5px 10px rgba(0, 0, 0, 0.15);
 }
+>>>>>>> 71313c00349b0b80f919ad8e696f20cf1e88dfc9
 
 @media screen and (max-width: 700px) {
   body {
