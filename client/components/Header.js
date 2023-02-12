@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 import { useIsMounted } from "@/pages/hooks/useIsMounted";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useSigner } from "wagmi";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { ethers } from "ethers";
 import { useDispatch } from "react-redux";
 import { addContractAddresses, saveAddressAndSigner } from "@/redux/header";
@@ -65,10 +65,12 @@ function Header() {
     );
     address && signer
       ? dispatch(
-          saveAddressAndSigner({ address, signer, instances, nftInstances })
-        )
+        saveAddressAndSigner({ address, signer, instances, nftInstances })
+      )
       : null;
   }, [signer]);
+
+  const router = useRouter();
 
   return (
     <div className="header-container">
@@ -77,31 +79,57 @@ function Header() {
       </div>
       <div className="Header">
         <ul className="navbar">
-          <li className="navItems">
-            <Link href="/">
-              <FaHome />
-            </Link>
-          </li>
-          <li className="navItems">
-            <a href="#">
-              <BsFillPersonFill />
-            </a>
-          </li>
-          <li className="navItems active">
-            <a href="/mint">
+          <Link href="/" className="navItems" >
+            <li className="navItems">
+              {/* hii */}
+              <span>
+
+                <FaHome />
+              </span>
+              {/* <a href='#'>
+              </a> */}
+            </li>
+          </Link>
+          <Link href="/auth" className="navItems" >
+            <li className="navItems">
+              <span>
+                <BsFillPersonFill />
+              </span>
+              {/* <a href="#">
+              </a> */}
+            </li>
+          </Link>
+          <Link href="/" className="navItems" >
+
+            <li className="navItems active">
+              {/* <a href="#"> */}
+              <span>
+
               <IoIosAddCircleOutline />
-            </a>
-          </li>
-          <li className="navItems">
-            <a href="#">
-              <BsChat />
-            </a>
-          </li>
-          <li className="navItems">
-            <a href="#">
+              </span>
+              {/* </a> */}
+            </li>
+          </Link>
+          <Link href="/" className="navItems" >
+            <li className="navItems" >
+              {/* <a href="#"> */}
+              <span>
+
               <IoMdSettings />
-            </a>
-          </li>
+              </span>
+              {/* </a> */}
+            </li>
+          </Link>
+          <Link href="/" className="navItems" >
+
+            <li className="navItems">
+              {/* <a href="#"> */}
+              <span>
+              <BsChat />
+              </span>
+              {/* </a> */}
+            </li>
+          </Link>
           <div id="marker"></div>
         </ul>
       </div>

@@ -144,27 +144,7 @@ body::after{
 	color: var(#6441a5);
 	caret-color: var(#6441a5);
 }
-
-/* .home-Show-Btn{
-
-    width: 50%;
-	height: 6vmin;
-	border: none;
-	border-radius: 1rem;
-	outline: none;
-	font-size: 2vmin;
-	font-weight: bold;
-    text-align: center;
-	padding: 0 4vmin;
-	box-shadow: var(-0.2rem -0.2rem 0.5rem var(--white) 0.2rem 0.2rem 0.5rem var(#c8d0e7));
-	background: var(-#e4ebf5);
-	color: var(#6441a5);
-	caret-color: var(#6441a5);    
-
-
-} */
-
-
+/* 
 .home-Show-Btn{
 
     background-color: #2f2b26; 
@@ -174,7 +154,7 @@ body::after{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    height: 6vh;
+    height: 5.1vh;
     border: none;
     font-size: 2.5vh;
     box-shadow: 0 5px #999;
@@ -203,15 +183,39 @@ body::after{
     
     background-color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    transform: translateY(4px);
+    transform: translateY(4px); */
 
- }
+ /* } */
 /* 
   .home-Show-Btn:active {
     background-color: white;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   } */
+
+  .home-Show-Btn {
+    position: relative;
+    width: 80px;
+    height: 45px;
+    margin-left: 10px;
+    border-radius: 10%;
+    /* background: #fff; */
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    cursor: pointer;
+    color: #161623;
+    box-shadow: inset 0 -5px 5px rgba(0,0,0,0.3),
+                0 5px 10px rgba(0,0,0,0.2),
+                0 10px 15px rgba(0,0,0,0.2);
+  }
+  .home-Show-Btn.active {
+    color: #ff669a;
+    box-shadow: inset 0 -7px 5px rgba(0,0,0,0.025),
+                inset 0 5px 10px rgba(0,0,0,0.15);
+  }
 
 @media screen and (max-width: 680px) {
 
@@ -302,7 +306,7 @@ body::after{
 	caret-color: var(#6441a5);
 }
 
-.home-Show-Btn{
+/* .home-Show-Btn{
 
     background-color: #2f2b26; 
     border: 2px solid whitesmoke;
@@ -319,7 +323,7 @@ body::after{
     transition: 1s;
     font-family: monospace;
 
-}
+} */
 
 
 
