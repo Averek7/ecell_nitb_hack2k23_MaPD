@@ -4,6 +4,7 @@ import auth from "./slices/auth";
 import header from "./header";
 import nftQr from "./nftQr";
 import product from "./slices/product";
+import collection from "./slices/collection";
 
 const rootReducer = {
   error,
@@ -11,7 +12,8 @@ const rootReducer = {
   auth,
   header,
   nftQr,
-  product
+  product,
+  collection,
 };
 
 export default rootReducer;

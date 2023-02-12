@@ -5,7 +5,7 @@ import { useAccount } from "wagmi";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function NftCard() {
+function NftCard({ item }) {
   const { address } = useAccount();
   const router = useRouter();
   const handleClick = (e) => {
@@ -26,7 +26,7 @@ function NftCard() {
                   className="nameAddress"
                   style={{ fontSize: "15px", textAlign: "center" }}
                 >
-                  {address?.slice(0, 7)}....{address?.slice(32, 37)}
+                  {item.address?.slice(0, 7)}....{item.address?.slice(32, 37)}
                 </div>
               </>
               <div
@@ -39,7 +39,7 @@ function NftCard() {
                   margin: "5px",
                 }}
               >
-                <span style={{ padding: "0px", margin: "0px" }}>Email</span>
+                <span style={{ padding: "0px", margin: "0px" }}>{item.email}</span>
                 <Link href="/transferOwner" className="btn mintBtn">
                   View NFT
                 </Link>
