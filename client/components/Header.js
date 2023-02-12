@@ -3,6 +3,7 @@ import Image from "next/image";
 import logo from "../assets/logo.png";
 import { useIsMounted } from "@/pages/hooks/useIsMounted";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { YourButton } from "./Header.data";
 import { useAccount, useSigner } from "wagmi";
 import { useRouter } from "next/router";
 import { ethers } from "ethers";
@@ -134,7 +135,7 @@ function Header() {
         </ul>
       </div>
       <div className="button-container">
-        <ConnectButton />
+        <YourButton />
       </div>
     </div>
   );
