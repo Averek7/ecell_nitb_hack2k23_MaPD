@@ -6,11 +6,11 @@ import { addTransaction, getUserTransactions } from '../../transactions/controll
 
 const router = express.Router();
 
-router.post('/add', verifyToken,  async(req, res) => {
+router.post('/add',  async(req, res) => {
     addTransaction(req,res);
 });
 
-router.get('/fetch', verifyToken, async(req, res) => {
+router.get('/fetch', async(req, res) => {
     getUserTransactions(req,res);
 });
 
