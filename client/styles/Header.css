@@ -33,7 +33,7 @@
   list-style: none;
 }
 
-.navbar .navItems a {
+.navbar .navItems span {
   color: #fff;
   position: relative;
   text-decoration: none;
@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 
-.navbar .navItems:hover a {
+.navbar .navItems:hover span {
   cursor: pointer;
   opacity: 1;
 }
@@ -76,37 +76,37 @@
 }
 
 .navbar .navItems:nth-child(1):hover ~ #marker::before {
-  background: #5da6ff;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+  /* background: linear-gradient(#f00, #f0f); */
+  background: #f0f;
+  box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
   cursor: pointer;
   margin-left: -200px;
 }
-.navbar li:nth-child(2):hover ~ #marker::before {
-  background: #5da6ff;
-  cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+.navbar .navItems:nth-child(2):hover ~ #marker::before {
+  background: #f0f;
+  box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
+  cursor: pointer;
   margin-left: -100px;
 }
-.navbar li:nth-child(3):hover ~ #marker::before {
-  background: #5da6ff;
+.navbar .navItems:nth-child(3):hover ~ #marker::before {
   cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+  background: #f0f;
+  box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
-  /* margin-left: 100px; */
 }
-.navbar li:nth-child(4):hover ~ #marker::before {
-  background: #5da6ff;
+.navbar .navItems:nth-child(4):hover ~ #marker::before {
   cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+  background: #f0f;
+  box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
   margin-left: 100px;
 }
-.navbar li:nth-child(5):hover ~ #marker::before {
-  background: #5da6ff;
+.navbar .navItems:nth-child(5):hover ~ #marker::before {
   cursor: pointer;
-  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+  background: #f0f;
+  box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
   margin-left: 200px;
 }
@@ -124,7 +124,7 @@
     /* opacity: 1; */
   }
 
-  .navbar .navItems a {
+  .navbar .navItems span {
     color: #fff;
     position: relative;
     text-decoration: none;
@@ -163,37 +163,36 @@
   }
 
   .navbar .navItems:nth-child(1):hover ~ #marker::before {
-    background: #5da6ff;
-    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
-      0 0 60px #5da6ff;
     cursor: pointer;
+    background: #f0f;
+    box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
+      0 0 60px #5da6ff;
     margin-left: -200px;
   }
-  .navbar li:nth-child(2):hover ~ #marker::before {
-    background: #5da6ff;
+  .navbar .navItems:nth-child(2):hover ~ #marker::before {
     cursor: pointer;
-    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+    background: #f0f;
+    box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
       0 0 60px #5da6ff;
     margin-left: -100px;
   }
-  .navbar li:nth-child(3):hover ~ #marker::before {
-    background: #5da6ff;
+  .navbar .navItems:nth-child(3):hover ~ #marker::before {
     cursor: pointer;
-    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+    background: #f0f;
+    box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
       0 0 60px #5da6ff;
-    /* margin-left: 100px; */
   }
-  .navbar li:nth-child(4):hover ~ #marker::before {
-    background: #5da6ff;
+  .navbar .navItems:nth-child(4):hover ~ #marker::before {
     cursor: pointer;
-    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+    background: #f0f;
+    box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
       0 0 60px #5da6ff;
     margin-left: 100px;
   }
-  .navbar li:nth-child(5):hover ~ #marker::before {
-    background: #5da6ff;
+  .navbar .navItems:nth-child(5):hover ~ #marker::before {
     cursor: pointer;
-    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+    background: #f0f;
+    box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
       0 0 60px #5da6ff;
     margin-left: 200px;
   }
