@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 import Support from "@/components/Support"
 import Desc from "@/components/Desc"
 import { useState } from "react"
-import Scan from "@/components/Scan"
+// import Scan from "@/components/Scan"
 import { useRouter } from "next/router"
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -30,7 +30,7 @@ export default function Home() {
           <div className="content">
             <h4>QR</h4>
             <h3>SCAN</h3>
-            <Scan />
+            {/* <Scan /> */}
             <p>
               Scan a Qr to check the validation of the product and previous
               vendors
