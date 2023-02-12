@@ -99,8 +99,18 @@ const Id = () => {
                 <p>{productData?.description}</p>
               </div>
               <div className="txt prodtxtBox">
-                <h4>Title:</h4>
-                <p>Hello</p>
+                <h4>Token ID:</h4>
+                <p>{productData?.tokenId}</p>
+              </div>
+            </div>
+            <div className="prodinDiv">
+              <div className="txt prodtxtBox">
+                <h4>QR Data:</h4>
+                <a href={productData?.qrIpfs} style={{ textDecoration: "none" }} target="_blank"><button className="btn">View</button></a>
+              </div>
+              <div className="txt prodtxtBox">
+                <h4>Current Owner Address:</h4>
+                <p>{productData?.owner}</p>
               </div>
             </div>
             <div style={{ width: "100%", float: "right", marginTop: "auto" }}>
