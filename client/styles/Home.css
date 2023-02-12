@@ -218,7 +218,7 @@ body::after{
                 inset 0 5px 10px rgba(0,0,0,0.15);
   }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 700px) {
 
 
     body{
