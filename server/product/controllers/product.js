@@ -79,7 +79,7 @@ const generateQR = async (req, res) => {
     const { uuid } = req.query;
 
     try {
-        let data = {uuid};
+        let data = `https://localhost:3000/product/${uuid}`;
 
         let stringdata = JSON.stringify(data);
 
