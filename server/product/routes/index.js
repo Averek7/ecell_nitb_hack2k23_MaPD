@@ -5,19 +5,19 @@ import { insertProduct, searchProduct, generateQR, updateIpfs, fetchIpfs } from 
 
 const router = express.Router();
 
-router.post('/insertProcduct', verifyToken, async(req, res) => {
+router.post('/insertProcduct', async(req, res) => {
     insertProduct(req, res);
 })
 
-router.get('/searchProcduct', verifyToken, async(req, res) => {
+router.get('/searchProcduct', async(req, res) => {
     searchProduct(req, res);
 })
 
-router.get('/generateQR', verifyToken, async(req, res) => {
+router.get('/generateQR', async(req, res) => {
     generateQR(req, res);
 })
 
-router.post('/updateIpfs', verifyToken, async(req, res) => {
+router.post('/updateIpfs', async(req, res) => {
     updateIpfs(req, res);
 })
 
