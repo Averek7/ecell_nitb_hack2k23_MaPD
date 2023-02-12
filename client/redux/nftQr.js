@@ -4,12 +4,20 @@ import axios from "axios";
 export const mintQR = createAsyncThunk("", async (data, thunkAPI) => {
   try {
     const walletAddress = thunkAPI.getState().header.walletAddress;
-    const response = await axios.post(
-      `http:/localhost:3000/${walletAddress}/mintQR`,
-      data
-    );
-    console.log(response);
-    return response.data;
+
+    if(window.localStorage.getItem("token")){
+      const response = await axios.post(
+        `http:/localhost:3000/${walletAddress}/mintQR`,
+        data
+      );
+      console.log(response);
+      return response.data;
+
+    }
+    else{
+      return "NOT Autherized";
+    }
+
   } catch (error) {}
 });
 
