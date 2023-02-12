@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { ethers } from "ethers";
 import { useSelector } from "react-redux";
@@ -7,7 +7,7 @@ import axios from "axios";
 import { useIsMounted } from "@/pages/hooks/useIsMounted";
 
 const TransactionCard = ({ item, active }) => {
-  const { address } = useAccount();
+  // const mounted = useIsMounted()
 
   const API_KEY = "MIAEXYAS736K5A1FCH2HIU5X8KVVI4IW2A";
   const getTransact = async () => {
@@ -26,7 +26,8 @@ const TransactionCard = ({ item, active }) => {
     );
     console.log(response.data);
   };
-//   getNft();
+  //   getNft();
+  const { address } = useAccount();
   return (
     <div className="nftcard" style={{ margin: "5px" }}>
       <div className="nftcardHead">
@@ -40,7 +41,7 @@ const TransactionCard = ({ item, active }) => {
       </div>
 
       <div className="nftpricesRow">
-        <div className="nftpricesele">TransactionHash</div>
+        <div className="nftpricesele">{txHash}</div>
       </div>
 
       <div className="nftpricesRow">

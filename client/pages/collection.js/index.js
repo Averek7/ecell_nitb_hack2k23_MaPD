@@ -22,7 +22,7 @@ function index() {
       <div className="collection-container">
         <div className="card-container">
           <>
-            {/* {mynfts ? (
+            {mynfts ? (
               mynfts.map((item) => (
                 <div>
                   <NftCard {...item} />
@@ -32,7 +32,7 @@ function index() {
               <div>
                 <Loader />
               </div>
-            )} */}
+            )}
           </>
         </div>
       </div>

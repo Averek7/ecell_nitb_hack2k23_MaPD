@@ -7,7 +7,7 @@ import TransactionCard from "@/components/TransactionCard";
 
 function Dashboard() {
   const { address } = useAccount();
-  const [tab, setTabl] = useState("Listed");
+  const [tab, setTab] = useState("Listed");
   return (
     <Layout>
       <div className="detailContainer">
