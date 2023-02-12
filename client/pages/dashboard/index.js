@@ -43,7 +43,6 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        {/* <div className="btn mintBtn">View NFT</div> */}
       </div>
     </Layout>
   );

@@ -2,9 +2,16 @@ import React from "react";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 import { useAccount } from "wagmi";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 function NftCard() {
   const { address } = useAccount();
+  const router = useRouter();
+  const handleClick = (e) => {
+    e.preventDefault();
+    router.push;
+  };
   return (
     <div>
       <div className="Ncontainer">
@@ -33,7 +40,9 @@ function NftCard() {
                 }}
               >
                 <span style={{ padding: "0px", margin: "0px" }}>Email</span>
-                <button className="btn mintBtn">Request</button>
+                <Link href="/transferOwner" className="btn mintBtn">
+                  View NFT
+                </Link>
               </div>
             </div>
           </div>
