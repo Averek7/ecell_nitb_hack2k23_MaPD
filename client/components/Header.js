@@ -14,8 +14,10 @@ import DL_contract_address from "../assets/contract_data/ProductsAddress.json";
 import nft_contract_address from "../assets/contract_data/nftAddress.json";
 
 import { FaHome } from "react-icons/fa";
-import { BsChat, BsFillPersonFill } from "react-icons/bs";
+import { BsCollectionFill, BsFillPersonFill } from "react-icons/bs";
 import { IoIosAddCircleOutline, IoMdSettings } from "react-icons/io";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+
 import Link from "next/link";
 
 const tabs = [
@@ -65,8 +67,8 @@ function Header() {
     );
     address && signer
       ? dispatch(
-        saveAddressAndSigner({ address, signer, instances, nftInstances })
-      )
+          saveAddressAndSigner({ address, signer, instances, nftInstances })
+        )
       : null;
   }, [signer]);
 
@@ -79,55 +81,39 @@ function Header() {
       </div>
       <div className="Header">
         <ul className="navbar">
-          <Link href="/" className="navItems" >
+          <Link href="/" className="navItems">
             <li className="navItems">
-              {/* hii */}
               <span>
-
                 <FaHome />
               </span>
-              {/* <a href='#'>
-              </a> */}
             </li>
           </Link>
-          <Link href="/auth" className="navItems" >
+          <Link href="/auth" className="navItems">
             <li className="navItems">
               <span>
                 <BsFillPersonFill />
               </span>
-              {/* <a href="#">
-              </a> */}
             </li>
           </Link>
-          <Link href="/" className="navItems" >
-
+          <Link href="/mint" className="navItems">
             <li className="navItems active">
-              {/* <a href="#"> */}
               <span>
-
-              <IoIosAddCircleOutline />
+                <IoIosAddCircleOutline />
               </span>
-              {/* </a> */}
             </li>
           </Link>
-          <Link href="/" className="navItems" >
-            <li className="navItems" >
-              {/* <a href="#"> */}
-              <span>
-
-              <IoMdSettings />
-              </span>
-              {/* </a> */}
-            </li>
-          </Link>
-          <Link href="/" className="navItems" >
-
+          <Link href="/collection" className="navItems">
             <li className="navItems">
-              {/* <a href="#"> */}
               <span>
-              <BsChat />
+                <BsCollectionFill />
               </span>
-              {/* </a> */}
+            </li>
+          </Link>
+          <Link href="/dashboard" className="navItems">
+            <li className="navItems">
+              <span>
+                <MdOutlineDashboardCustomize />
+              </span>
             </li>
           </Link>
           <div id="marker"></div>

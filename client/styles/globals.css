@@ -165,3 +165,47 @@ body::before {
     height: 200px;
   }
 }
+
+.nftcard {
+  width: 99%;
+  /* height: 100px; */
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #070607, #373636);
+  border-radius: 10px;
+  border: 1px solid #595959;
+  padding: 25px;
+  /* border: 4px solid #000; */
+}
+
+/* .nftcard:hover{
+    border: 3px solid #9925ad;
+} */
+
+.nftcard h5 {
+  margin-top: -20px;
+  color: #aaaaaa;
+}
+
+.nftImg {
+  border-radius: 10px;
+  width: 80%;
+  height: 50%;
+}
+
+.nftpricesRow {
+  display: flex;
+  padding: 15px;
+}
+
+.nftpricesele {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.nftcardHead {
+  padding: 0px 10px;
+}
