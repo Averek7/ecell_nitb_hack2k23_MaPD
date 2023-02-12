@@ -54,6 +54,10 @@ body::before {
   margin: 20px 0px;
 }
 
+.btn-sm{
+  font-size: 10px;
+}
+
 .inputLabel {
   display: flex;
   flex-direction: column;

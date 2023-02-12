@@ -22,11 +22,11 @@ export const updateProduct = createAsyncThunk(
       //     return
       //   }
       const response = await axios.post(
-        `${process.env.BACKEND_ENDPOINT}/product/add`,
-        { ...data }
+        `${process.env.BACKEND_ENDPOINT}/product/updateipfs`,
+        data
       )
 
-      console.log(response)
+      console.log("Final Data link added on backend", response)
 
       return response.data
     } catch (err) {
