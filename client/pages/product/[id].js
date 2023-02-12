@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import { useDispatch, useSelector } from "react-redux"
+import axios from "axios"
 
 const Id = () => {
   const [productData, setProductData] = useState(null)
@@ -10,9 +11,9 @@ const Id = () => {
 
   useEffect(() => {
     const getLink = async (id) => {
-      const link = axios.get(`/getProductLink?uuid=${id}`)
+      const link = axios.get(`/product/fetchIpfs?uuid=${id}`)
       //   let link = await instances.getProductDetails(tmpid)
-      return link
+      return link.ipfs
     }
 
     if (id) {

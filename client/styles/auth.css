@@ -18,6 +18,7 @@
     border-radius: 15px;
     background: rgba(199, 205, 255, 0.1);
     overflow: hidden;
+    z-index: 3;
     /* display: flex; */
     /* justify-content: center;
     align-items: center;

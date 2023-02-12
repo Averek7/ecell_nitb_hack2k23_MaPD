@@ -54,6 +54,16 @@ body::before {
   margin: 20px 0px;
 }
 
+.btn-sm{
+  font-size: 10px;
+}
+
+.btn:hover {background-color: #000}
+
+.btn:active {
+  transform: translateY(4px);
+}
+
 .inputLabel {
   display: flex;
   flex-direction: column;
