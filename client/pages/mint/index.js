@@ -8,7 +8,6 @@ import Error from "@/components/Error"
 import { setSuccess } from "@/redux/slices/success"
 import { setError } from "@/redux/slices/error"
 import InputBox from "@/components/InputBox"
-import { QRCodeCanvas } from "qrcode.react"
 import axios from "axios"
 import { updateProduct } from "@/redux/slices/product"
 import Loader from "@/components/Loader"
@@ -295,16 +294,6 @@ function index() {
     setUrl("")
   }
 
-  const qrcode = (
-    <QRCodeCanvas
-      id="qrCode"
-      value={`https://voices.uchicago.edu/201702busn3910001/2018/04/23/pitch-blockchain-in-the-supply-chain/`}
-      size={300}
-      bgColor={"#fff"}
-      level={"H"}
-    />
-  )
-
   return (
     <div>
       <Layout>
@@ -389,9 +378,6 @@ function index() {
                 </div>
               </>
             )}
-          </div>
-          <div className="qrcode" style={{ display: "none" }}>
-            <div ref={qrRef}>{qrcode}</div>
           </div>
         </div>
         <Success />
