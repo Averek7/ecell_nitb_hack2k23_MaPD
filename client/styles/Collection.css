@@ -1,7 +1,6 @@
 .collection-container {
-  height: 70vh;
+  height: 77vh;
   background-color: #45454f;
   z-index: 1;
-  width: 100%;
-  /* display: flex; */
+  width: 100vw;
 }

@@ -21,14 +21,21 @@ export const updateProduct = createAsyncThunk(
       //     )
       //     return
       //   }
-      const response = await axios.post(
-        `${process.env.BACKEND_ENDPOINT}/product/updateipfs`,
-        data
-      )
 
-      console.log("Final Data link added on backend", response)
+      if (window.localStorage.getItem("token")) {
+        const response = await axios.post(
+          `${process.env.BACKEND_ENDPOINT}/product/updateipfs`,
+          data
+        )
 
-      return response.data
+        console.log("Final Data link added on backend", response)
+
+        return response.data
+      }
+      else{
+        return "NOT Autherized";
+      }
+
     } catch (err) {
       thunkAPI.dispatch(setError(err.response?.data?.message))
       return thunkAPI.rejectWithValue(err.response?.data?.message)
