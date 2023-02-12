@@ -1,26 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-
-.detailContainer {
-  display: flex;
-  margin: 14px 0;
-  width: 100vw;
-}
-
-.Dcontainer {
+.Ncontainer {
   z-index: 1;
+  margin: 30px 0;
   display: flex;
-  width: 20%;
+  padding: 40px 0;
   flex-wrap: wrap;
-  margin: 50px 0;
 }
 
-.Dcontainer .cards {
+.Ncontainer .Ncard {
   width: 300px;
   height: 400px;
   background: rgb(255, 255, 255, 0.3);
@@ -33,7 +19,7 @@
   backdrop-filter: blur(5px);
   z-index: 1;
 }
-.Dcontainer .cards .contents {
+.Ncontainer .Ncard .Ncontent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,11 +27,11 @@
   opacity: 0.7;
   transition: 0.5s;
 }
-.Dcontainer .cards:hover .contents {
+.Ncontainer .Ncard:hover .Ncontent {
   opacity: 1;
   transform: translateY(-20px);
 }
-.Dcontainer .cards .contents .img {
+.Ncontainer .Ncard .Ncontent .img {
   position: relative;
   width: 150px;
   height: 150px;
@@ -53,14 +39,14 @@
   overflow: hidden;
   border: 10px solid rgba(255, 255, 255, 0.25);
 }
-.Dcontainer .cards .contents .img img {
+.Ncontainer .Ncard .Ncontent .img img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.Dcontainer .cards .contents .contentBx {
+.Ncontainer .Ncard .Ncontent .NcontentBx {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -70,16 +56,8 @@
   margin: 20px 0 10px;
   line-height: 1.1em;
 }
-.Dcontainer .cards .contents .contentBx h3 span {
+.Ncontainer .Ncard .Ncontent .NcontentBx h3 span {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
-}
-
-.transaction-container {
-  z-index: 1;
-  width: 100%;
-  margin: 70px 120px;
-  height: 400px;
-  background-color: rgb(255, 255, 255, 0.3);
 }
