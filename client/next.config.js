@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    BACKEND_ENDPOINT: "http://43.204.234.140:5000"
+    BACKEND_ENDPOINT: "http://65.2.150.236:5000"
   },
   webpack5: true,
   webpack: (config) => {
