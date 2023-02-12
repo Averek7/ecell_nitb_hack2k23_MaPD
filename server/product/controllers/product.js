@@ -2,7 +2,7 @@ import { body, validationResult } from 'express-validator';
 import log from '../../log.js';
 import { changeIpfs, fetchIpfsDb, insertProductDb, insertProductId, searchProductDb } from '../db/product.js';
 import QRCode from 'qrcode';
-import { pool } from '../../connections/db.js';
+
 const formatSearchKey = (searchVal) => {
     // const searchVal = query.trim().split(' ');
     const n = searchVal.length;
@@ -79,8 +79,6 @@ const generateQR = async (req, res) => {
     const { uuid } = req.query;
 
     try {
-        const insertPro = await insertProductId({uuid});
-
         let data = {uuid};
 
         let stringdata = JSON.stringify(data);
