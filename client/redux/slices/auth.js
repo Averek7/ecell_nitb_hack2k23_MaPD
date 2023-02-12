@@ -67,7 +67,12 @@ export const authSlice = createSlice({
     user: null,
     error: null
   },
-  reducers: {},
+  reducers: {
+    logout: (state, action) => {
+      state.user = null
+      localStorage.removeItem("token")
+    }
+  },
   extraReducers: (builder) => {
     function onPending(state, action) {
       state.loading = true
@@ -91,5 +96,5 @@ export const authSlice = createSlice({
   }
 })
 
-// export const { setError, clearError } = errorSlice.actions;
+export const { logout } = authSlice.actions
 export default authSlice.reducer
