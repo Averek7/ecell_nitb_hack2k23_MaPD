@@ -98,6 +98,70 @@ body::before {
   color: #7c828d;
 }
 
-.txt{
+.txt {
   color: whitesmoke;
+}
+
+.errorBox {
+  width: 100%;
+  padding: 10px;
+  background-color: #983634;
+  border-radius: 15px;
+  border: 2px solid rgb(176, 10, 10);
+}
+
+.errorBox h3 {
+  color: white;
+}
+
+.errorBox p {
+  color: white;
+}
+
+.successBox {
+  position: fixed;
+  min-width: 250px;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+  z-index: 2;
+  padding: 10px;
+  background-color: #349848;
+  border-radius: 15px;
+  border: 2px solid rgb(10, 176, 18);
+}
+
+/* .successBox h3{
+  
+} */
+
+.successBox p {
+  margin-top: -12px;
+}
+
+.loaderContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notify:hover {
+  color: #9925ad;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .lottie {
+    width: 350px;
+    height: 3350px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .lottie {
+    width: 200px;
+    height: 200px;
+  }
 }
