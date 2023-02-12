@@ -30,11 +30,11 @@ const insertProductId = (payload) => {
 }
 
 const changeIpfs = (payload) => {
-    const query = `UPDATE product_map pm
-    SET pm.ipfs = ?
-    WHERE pm.unique_id = ?;`;
+    const query = `INSERT INTO product_map (unique_id, ipfs)
+    values (?, ?)
+    ON DUPLICATE KEY UPDATE product_map.ipfs = ?;`;
 
-    return pool.query(query, [payload.ipfs, payload.uuid]);
+    return pool.query(query, [payload.uuid, payload.ipfs, payload.ipfs]);
 }
 
 const fetchIpfsDb = (payload) => {
