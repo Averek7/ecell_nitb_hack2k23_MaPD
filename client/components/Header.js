@@ -16,7 +16,7 @@ import nft_contract_address from "../assets/contract_data/nftAddress.json";
 import { FaHome } from "react-icons/fa";
 import { BsChat, BsFillPersonFill } from "react-icons/bs";
 import { IoIosAddCircleOutline, IoMdSettings } from "react-icons/io";
-import a from "next/link";
+import Link from "next/link";
 
 const tabs = [
   {
@@ -78,9 +78,9 @@ function Header() {
       <div className="Header">
         <ul className="navbar">
           <li className="navItems">
-            <a href="/">
+            <Link href="/">
               <FaHome />
-            </a>
+            </Link>
           </li>
           <li className="navItems">
             <a href="#">
