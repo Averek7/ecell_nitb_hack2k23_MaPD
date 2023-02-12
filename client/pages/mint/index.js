@@ -64,7 +64,7 @@ function index() {
         }
       })
       client
-        .add(JSON.stringify(qr?.data?.code))
+        .add(JSON.stringify((qr?.data?.code).substring(22)))
         .then(async (res) => {
           console.log("result", `https://ipfs.io/ipfs/${res.path}`)
           const dataIpfs = `https://ipfs.io/ipfs/${res.path}`
