@@ -1,6 +1,5 @@
 .header-container {
   color: #000;
-  /* position: fixed; */
   display: flex;
   padding: 8px;
   width: 98vw;
@@ -12,10 +11,8 @@
   margin: 10px;
   z-index: 1;
   position: absolute;
-  left: 2;
+  left: 0;
 }
-
-
 
 .Header {
   display: flex;
@@ -89,22 +86,21 @@
   box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
   cursor: pointer;
-  margin-left: -100px;
+  margin-left: -200px;
 }
 .navbar .navItems:nth-child(2):hover ~ #marker::before {
   background: #f0f;
   box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
   cursor: pointer;
+  margin-left: -100px;
 }
 .navbar .navItems:nth-child(3):hover ~ #marker::before {
   cursor: pointer;
   background: #f0f;
   box-shadow: 0 0 15px rgb(255, 36, 255), 0 0 30px #f0f, 0 0 45px #f0f,
     0 0 60px #5da6ff;
-    margin-left: 100px;
 }
-
 .navbar .navItems:nth-child(4):hover ~ #marker::before {
   cursor: pointer;
   background: #f0f;
