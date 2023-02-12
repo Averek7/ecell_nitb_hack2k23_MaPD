@@ -7,15 +7,17 @@ import Layout from "@/components/Layout";
 import InputBox from "@/components/InputBox";
 import Success from "@/components/Success";
 import Error from "@/components/Error";
+import axios from "axios";
+import { useProvider } from "wagmi";
 
 function index() {
   const { signer } = useSelector((state) => state.header);
   const [localLoading, setLocalLoading] = useState(false);
 
   // let toAddress = "0xab7dc3e852B8AE47B149036e398aC9D46e61409f";
-  let toAddress = "0x7eff959E7D7fB6b9F3cDA78599966870929A7628";
-  let tokenId = "0";
-  
+  // let toAddress = "0x7eff959E7D7fB6b9F3cDA78599966870929A7628";
+  // let tokenId = "0";
+
   const [data, setData] = useState({
     toAddress: "",
     tokenId: "",
@@ -79,7 +81,7 @@ function index() {
               disabled={localLoading}
             />
             <InputBox
-              name="tokenID"
+              name="tokenId"
               title="NFT Token ID"
               value={data.tokenId}
               handleChange={handleChange}

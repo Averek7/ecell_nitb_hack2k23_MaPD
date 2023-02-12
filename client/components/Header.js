@@ -1,142 +1,132 @@
-import React, { useState, useEffect } from "react"
-import Image from "next/image"
-import logo from "../assets/logo.png"
-import { useIsMounted } from "@/pages/hooks/useIsMounted"
-import { ConnectButton } from "@rainbow-me/rainbowkit"
-import { YourButton } from "./Header.data"
-import { useAccount, useSigner } from "wagmi"
-import { useRouter } from "next/router"
-import { ethers } from "ethers"
-import { useDispatch } from "react-redux"
-import { addContractAddresses, saveAddressAndSigner } from "@/redux/header"
-import abi from "../assets/contract_data/Products.json"
-import nftAbi from "../assets/contract_data/nft.json"
-import DL_contract_address from "../assets/contract_data/ProductsAddress.json"
-import nft_contract_address from "../assets/contract_data/nftAddress.json"
-import { FaHome } from "react-icons/fa"
-import { BsChat, BsFillPersonFill } from "react-icons/bs"
-import { IoIosAddCircleOutline, IoMdSettings } from "react-icons/io"
-import Link from "next/link"
-import { logout } from "../redux/slices/auth"
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import logo from "../assets/logo.png";
+import { useIsMounted } from "@/pages/hooks/useIsMounted";
+import { YourButton } from "./Header.data";
+import { useAccount, useSigner } from "wagmi";
+import { useRouter } from "next/router";
+import { ethers } from "ethers";
+import { useDispatch } from "react-redux";
+import { addContractAddresses, saveAddressAndSigner } from "@/redux/header";
+import abi from "../assets/contract_data/Products.json";
+import nftAbi from "../assets/contract_data/nft.json";
+import DL_contract_address from "../assets/contract_data/ProductsAddress.json";
+import nft_contract_address from "../assets/contract_data/nftAddress.json";
+
+import { FaHome } from "react-icons/fa";
+import { BsCollectionFill, BsFillPersonFill } from "react-icons/bs";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+
+import Link from "next/link";
+import { logout } from "../redux/slices/auth";
 
 const tabs = [
   {
     title: "Home",
-    link: "/"
+    link: "/",
   },
   {
     title: "About",
-    link: "/about"
+    link: "/about",
   },
   {
     title: "Login",
-    link: "/auth"
+    link: "/auth",
   },
   {
     title: "Transfer",
-    link: "/transferOwner"
-  }
-]
+    link: "/transferOwner",
+  },
+];
 
 function Header() {
   // const router = useRouter()
-  const mounted = useIsMounted()
-  const dispatch = useDispatch()
-  const { address } = useAccount()
-  const { data: signer } = useSigner()
-  const [addressfinal, setAddressfinal] = useState(null)
-  const token = mounted ? localStorage.getItem("token") : null
-  const router = useRouter()
+  const mounted = useIsMounted();
+  const dispatch = useDispatch();
+  const { address } = useAccount();
+  const { data: signer } = useSigner();
+  const [addressfinal, setAddressfinal] = useState(null);
+  const token = mounted ? localStorage.getItem("token") : null;
+  const router = useRouter();
 
   const instances = new ethers.Contract(
     DL_contract_address.address,
     abi.abi,
     signer
-  )
+  );
 
   const nftInstances = new ethers.Contract(
     nft_contract_address.address,
     nftAbi.abi,
     signer
-  )
+  );
 
   useEffect(() => {
     dispatch(
       addContractAddresses({
         DL_contract_address: DL_contract_address.address,
-        nft_contract_address: nft_contract_address.address
+        nft_contract_address: nft_contract_address.address,
       })
-    )
+    );
     address && signer
       ? dispatch(
           saveAddressAndSigner({ address, signer, instances, nftInstances })
         )
-      : null
-  }, [signer])
+      : null;
+  }, [signer]);
 
   const doLogout = () => {
-    dispatch(logout())
+    dispatch(logout());
     if (!localStorage.getItem("token")) {
-      router.push("/")
+      router.push("/");
     }
-  }
+  };
 
   return (
     <>
       <div className="logo-container">
         <Image src={logo} width={80} height={80} />
       </div>
-      <div className="header-container">
-        <div className="Header">
-          <ul className="navbar">
-            <Link href="/" className="navItems">
-              <li className="navItems">
-                <span>
-                  <FaHome />
-                </span>
-              </li>
-            </Link>
-            {token ? (
-              <>
-                <Link href="/auth" className="navItems">
-                  <li className="navItems">
-                    <span>
-                      <BsFillPersonFill />
-                    </span>
-                  </li>
-                </Link>
-                <Link href="/mint" className="navItems">
-                  <li className="navItems active">
-                    {/* <a href="#"> */}
-                    <span>
-                      <IoIosAddCircleOutline />
-                    </span>
-                    {/* </a> */}
-                  </li>
-                </Link>
-              </>
-            ) : null}
-            <Link href="/" className="navItems">
-              <li className="navItems">
-                {/* <a href="#"> */}
-                <span>
-                  <IoMdSettings />
-                </span>
-                {/* </a> */}
-              </li>
-            </Link>
-            <Link href="/" className="navItems">
-              <li className="navItems">
-                {/* <a href="#"> */}
-                <span>
-                  <BsChat />
-                </span>
-                {/* </a> */}
-              </li>
-            </Link>
-            <div id="marker"></div>
-          </ul>
-        </div>
+      <div className="Header">
+        <ul className="navbar">
+          <Link href="/" className="navItems">
+            <li className="navItems">
+              <span>
+                <FaHome />
+              </span>
+            </li>
+          </Link>
+          <Link href="/auth" className="navItems">
+            <li className="navItems">
+              <span>
+                <BsFillPersonFill />
+              </span>
+            </li>
+          </Link>
+          <Link href="/mint" className="navItems">
+            <li className="navItems active">
+              <span>
+                <IoIosAddCircleOutline />
+              </span>
+            </li>
+          </Link>
+          <Link href="/collection" className="navItems">
+            <li className="navItems">
+              <span>
+                <BsCollectionFill />
+              </span>
+            </li>
+          </Link>
+          <Link href="/dashboard" className="navItems">
+            <li className="navItems">
+              <span>
+                <MdOutlineDashboardCustomize />
+              </span>
+            </li>
+          </Link>
+          <div id="marker"></div>
+        </ul>
       </div>
       <div className="bcBtn">
         {token ? (
@@ -153,7 +143,7 @@ function Header() {
         )}
       </div>
     </>
-  )
+  );
 }
 
-export default Header
+export default Header;

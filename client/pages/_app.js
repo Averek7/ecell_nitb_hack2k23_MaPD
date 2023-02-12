@@ -8,17 +8,19 @@ import "@/styles/auth.css";
 import "@/styles/ProductForm.css";
 import "@/styles/Home.css";
 import "@/styles/mintform.css";
+import "@/styles/Dashboard.css";
+import "@/styles/Collection.css";
+import "@/styles/NftCard.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import "@/styles/AddProductForm.css";
 import { wrapper } from "../redux/store";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygonMumbai, goerli } from "wagmi/chains";
+import { polygonMumbai } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
 const { chains, provider } = configureChains(
-  [mainnet, polygonMumbai, goerli],
+  [polygonMumbai],
   [
     alchemyProvider({ apiKey: "M6wTJ_1DsrJkSUE0qusDZO96oASJC8xS" }),
     publicProvider(),
