@@ -13,15 +13,15 @@ router.get('/searchProcduct', verifyToken, async(req, res) => {
     searchProduct(req, res);
 })
 
-router.get('/generateQR', async(req, res) => {
+router.get('/generateQR', verifyToken, async(req, res) => {
     generateQR(req, res);
 })
 
-router.post('/updateIpfs', async(req, res) => {
+router.post('/updateIpfs', verifyToken, async(req, res) => {
     updateIpfs(req, res);
 })
 
-router.get('/fetchIpfs', async(req, res) => {
+router.get('/fetchIpfs', verifyToken, async(req, res) => {
     fetchIpfs(req, res);
 })
 
