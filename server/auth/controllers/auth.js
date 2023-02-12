@@ -42,7 +42,8 @@ const regis = async (req, res) => {
 
         return res.status(200).json({
             message: 'success',
-            token
+            token,
+            userDetails: userInfo[0]
         })
     } catch (err) {
         log.error({ error: err }, '[register][error]');
@@ -74,7 +75,8 @@ const logi = async(req, res) => {
               }, secret, { expiresIn: '30d' });    
             return res.status(200).json({
                 message: 'success',
-                token
+                token,
+                userDetails: {userId: s.userId, role: s.role, name: s.name, email: s.email}
             })
         } else {
             console.log("false");

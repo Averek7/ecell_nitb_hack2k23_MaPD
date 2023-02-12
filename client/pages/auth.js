@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux"
 import Error from "../components/Error"
 import Success from "../components/Success"
 import Layout from "../components/Layout"
+import { useRouter } from "next/router"
 
 const auth = () => {
   const [authLogin, setAuthLogin] = useState(true)
@@ -18,6 +19,7 @@ const auth = () => {
     role: "0"
   })
   const dispatch = useDispatch()
+  const router = useRouter()
 
   const handleChange = (e) => {
     setData({
@@ -29,16 +31,24 @@ const auth = () => {
 
   const handleLogin = () => {
     dispatch(loginUser(data))
+      .unwrap()
+      .then(() => {
+        router.push("/")
+      })
   }
 
   const calldispatch = (latitude, longitude) => {
     dispatch(
       registerUser({
         ...data,
-        "coordinateX": latitude,
-        "coordinateY": longitude
+        coordinateX: latitude,
+        coordinateY: longitude
       })
     )
+      .unwrap()
+      .then(() => {
+        router.push("/")
+      })
   }
 
   const handleRegister = () => {
@@ -50,7 +60,6 @@ const auth = () => {
       calldispatch(position.coords.latitude, position.coords.longitude)
     })
     // )
-    
   }
 
   return (
