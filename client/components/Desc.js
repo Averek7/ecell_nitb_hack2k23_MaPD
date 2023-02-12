@@ -10,6 +10,7 @@ function Desc() {
             <LottieCard
               src="https://assets9.lottiefiles.com/packages/lf20_mf5j5kua.json"
               width="400px"
+              
             />
           </div>
           <div className="desc-text">
