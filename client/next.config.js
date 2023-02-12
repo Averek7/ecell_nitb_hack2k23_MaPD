@@ -1,6 +1,20 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+module.exports = {
+  env: {
+    BACKEND_ENDPOINT: "http://65.2.150.236:5000",
+  },
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
 
-module.exports = nextConfig
+    return config;
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ipfs.io",
+        port: "",
+      },
+    ],
+  },
+};

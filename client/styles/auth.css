@@ -1,0 +1,47 @@
+.authContainer {
+  height: 80vh;
+  width: 100vw;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.authcenter {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px;
+  background-color: #cccccc;
+  border-radius: 15px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(199, 205, 255, 0.1);
+  overflow: hidden;
+  z-index: 3;
+  /* display: flex; */
+  /* justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(255, 118, 118);
+    border-left: 1px solid rgb(255, 155, 155);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+    transform: translateY(100px);
+    opacity: 1;
+    transition: 0.5s; */
+}
+
+.nameRegister {
+  display: flex;
+}
+
+.smClickText {
+  font-size: 13px;
+  color: #555555;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 3px;
+  color: whitesmoke;
+}

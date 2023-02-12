@@ -2,12 +2,12 @@
   color: azure;
   font-weight: 600;
 }
-.left {
+/* .left {
   background-color: #f5bf8f;
 }
 .right {
   background-color: #e7aa74;
-}
+} */
 .left,
 .right {
   display: flex;
@@ -23,5 +23,11 @@
 
 .right .desc-text {
   width: 60%;
+  height: 40%;
   margin: 0 15px 0 20px;
+}
+
+.desc-lottie,
+.desc-text {
+  z-index: 1;
 }

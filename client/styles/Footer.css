@@ -4,8 +4,9 @@
   bottom: 0;
   width: 100%;
   color: #fff;
-  /* position: fixed; */
+  position: relative;
   background-color: black;
+  height: 80px;
 }
 
 .footer-content {
@@ -26,4 +27,12 @@
 
 .media-container .media {
   padding: 0 15px;
+}
+
+
+@media screen and (max-width: 680px) {
+
+
+
+
 }
