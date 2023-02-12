@@ -7,7 +7,7 @@ import TransactionCard from "@/components/TransactionCard";
 
 function Dashboard() {
   const { address } = useAccount();
-  const [tab, setTabl] = useState("Listed");
+  const [tab, setTab] = useState("Listed");
   return (
     <Layout>
       <div className="detailContainer">
@@ -43,7 +43,6 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        {/* <div className="btn mintBtn">View NFT</div> */}
       </div>
     </Layout>
   );
