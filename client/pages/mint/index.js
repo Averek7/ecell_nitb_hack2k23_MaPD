@@ -60,16 +60,10 @@ function index() {
     // console.log(Number(tokenId.toString()))
     let editedData = {
       ...data,
-      id: Number(id.toString()),
+      id: Number(id.toString()) + 9,
     };
-    id = Number(id.toString());
-    dispatch(
-      mintNft({
-        ...data,
-        address: walletAddress,
-        uuid: id,
-      })
-    );
+    id = Number(id.toString()) + 9;
+    
     console.log("ID added", id);
     let qr = null;
     qr = await axios.get(

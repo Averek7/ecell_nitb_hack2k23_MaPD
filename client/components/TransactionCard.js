@@ -10,9 +10,9 @@ const TransactionCard = ({ item, active }) => {
   // const mounted = useIsMounted()
 
   const API_KEY = "MIAEXYAS736K5A1FCH2HIU5X8KVVI4IW2A";
+  const txHash =
+    "0xe53753cfde58d6cb63bacdf6cc822ed7704fba0b4118b1504507b1a9b87f401b";
   const getTransact = async () => {
-    const txHash =
-      "0xe53753cfde58d6cb63bacdf6cc822ed7704fba0b4118b1504507b1a9b87f401b";
     const response = await axios.get(
       `https://api.polygonscan.com/api?module=transaction&action=gettxreceiptstatus&txhash=${txHash}&apikey=${API_KEY}`
     );
@@ -29,7 +29,7 @@ const TransactionCard = ({ item, active }) => {
   //   getNft();
   const { address } = useAccount();
   return (
-    <div className="nftcard" style={{ margin: "5px" }}>
+    <div className="nftcard" style={{ margin: "5px", color: "#fff" }}>
       <div className="nftcardHead">
         <div style={{ padding: "2px" }}>
           <h3>TransactID #</h3>

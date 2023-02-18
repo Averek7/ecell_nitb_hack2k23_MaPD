@@ -129,18 +129,18 @@ function Header() {
         </ul>
       </div>
       <div className="bcBtn">
-        {token ? (
-          <>
-            <YourButton />
-            <button className="btn btn-sm" onClick={() => doLogout()}>
+        {/* { ( */}
+        <>
+          <YourButton />
+          {/* <button className="btn btn-sm" onClick={() => doLogout()}>
               Logout
-            </button>
-          </>
-        ) : (
+            </button> */}
+        </>
+        {/* ) : (
           <button className="btn" onClick={() => router.push("/auth")}>
             Login
           </button>
-        )}
+        )} */}
       </div>
     </>
   );

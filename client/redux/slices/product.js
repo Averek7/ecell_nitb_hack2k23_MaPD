@@ -1,7 +1,7 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import { setError } from "./error"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { setError } from "./error";
 
-import axios from "axios"
+import axios from "axios";
 
 export const updateProduct = createAsyncThunk(
   "auth/updateProduct",
@@ -22,52 +22,46 @@ export const updateProduct = createAsyncThunk(
       //     return
       //   }
 
-      if (window.localStorage.getItem("token")) {
-        const response = await axios.post(
-          `${process.env.BACKEND_ENDPOINT}/product/updateipfs`,
-          data
-        )
+      const response = await axios.post(
+        `${process.env.BACKEND_ENDPOINT}/product/updateipfs`,
+        data
+      );
 
-        console.log("Final Data link added on backend", response)
+      console.log("Final Data link added on backend", response);
 
-        return response.data
-      }
-      else{
-        return "NOT Autherized";
-      }
-
+      return response.data;
     } catch (err) {
-      thunkAPI.dispatch(setError(err.response?.data?.message))
-      return thunkAPI.rejectWithValue(err.response?.data?.message)
+      thunkAPI.dispatch(setError(err.response?.data?.message));
+      return thunkAPI.rejectWithValue(err.response?.data?.message);
     }
   }
-)
+);
 
 export const productSlice = createSlice({
   name: "product",
   initialState: {
     loading: false,
     productLink: null,
-    error: null
+    error: null,
   },
   reducers: {},
   extraReducers: (builder) => {
     function onPending(state, action) {
-      state.loading = true
-      state.error = null
+      state.loading = true;
+      state.error = null;
     }
     function onRejection(state, action) {
-      state.loading = false
-      state.error = action.payload
+      state.loading = false;
+      state.error = action.payload;
     }
     builder.addCase(updateProduct.fulfilled, (state, action) => {
-      state.productLink = action.payload
-      state.loading = false
-    })
-    builder.addCase(updateProduct.pending, onPending)
-    builder.addCase(updateProduct.rejected, onRejection)
-  }
-})
+      state.productLink = action.payload;
+      state.loading = false;
+    });
+    builder.addCase(updateProduct.pending, onPending);
+    builder.addCase(updateProduct.rejected, onRejection);
+  },
+});
 
 // export const { setError, clearError } = errorSlice.actions;
-export default productSlice.reducer
+export default productSlice.reducer;

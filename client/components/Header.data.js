@@ -35,7 +35,7 @@ export const YourButton = () => {
               if (!connected) {
                 return (
                   <button
-                    className="btn"
+                    className="btn btn-col"
                     onClick={openConnectModal}
                     type="button"
                   >
@@ -46,13 +46,13 @@ export const YourButton = () => {
               if (chain.unsupported) {
                 return (
                   <button
-                    className="btn"
+                    className="btn btn-col"
                     onClick={openChainModal}
                     type="button"
                   >
                     Wrong network
                   </button>
-                )
+                );
               }
               return (
                 <div  >
