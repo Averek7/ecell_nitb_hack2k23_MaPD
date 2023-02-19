@@ -21,25 +21,6 @@ import { MdOutlineDashboardCustomize } from "react-icons/md";
 import Link from "next/link";
 import { logout } from "../redux/slices/auth";
 
-const tabs = [
-  {
-    title: "Home",
-    link: "/",
-  },
-  {
-    title: "About",
-    link: "/about",
-  },
-  {
-    title: "Login",
-    link: "/auth",
-  },
-  {
-    title: "Transfer",
-    link: "/transferOwner",
-  },
-];
-
 function Header() {
   // const router = useRouter()
   const mounted = useIsMounted();
@@ -86,7 +67,7 @@ function Header() {
   return (
     <>
       <div className="logo-container">
-        <Image src={logo} width={80} height={80} />
+        <Image src={logo} width={60} height={60} />
       </div>
       <div className="Header">
         <ul className="navbar">

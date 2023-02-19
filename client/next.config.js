@@ -8,6 +8,10 @@ module.exports = {
 
     return config;
   },
+  swcMinify: true,
+  // experimental: {
+  //   forceSwcTransforms: true,
+  // },
   images: {
     remotePatterns: [
       {

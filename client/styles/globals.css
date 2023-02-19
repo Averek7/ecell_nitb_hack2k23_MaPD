@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-.btn-col{
+.btn-col {
   color: black;
 }
 
@@ -43,7 +43,7 @@ body::before {
   font-weight: bold;
   border-radius: 15px;
   border: none;
-  padding: 25px 25px;
+  padding: 15px;
   background-color: #0d0e0e;
   cursor: pointer;
   color: aliceblue;
@@ -52,7 +52,7 @@ body::before {
   justify-content: center;
   box-shadow: 0 3px #2f383c;
   min-width: 120px;
-  margin: 5px;
+  margin: 5px 15px;
   max-width: 160px;
 }
 
