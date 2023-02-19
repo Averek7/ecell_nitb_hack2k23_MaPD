@@ -8,7 +8,7 @@ module.exports = {
 
     return config;
   },
-  swcMinify: true,
+  // swcMinify: true,
   // experimental: {
   //   forceSwcTransforms: true,
   // },
