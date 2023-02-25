@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@arcana/auth-wagmi": "^0.0.2",
-    "@livepeer/react": "^2.2.3",
     "@lottiefiles/lottie-player": "^1.7.1",
     "@next/font": "13.1.6",
     "@rainbow-me/rainbowkit": "^0.8.1",
