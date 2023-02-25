@@ -1,27 +1,39 @@
 //scan.js
-import React, { useState, useRef, useEffect } from "react";
-// import { QrReader } from "react-qr-reader"
+import dynamic from "next/dynamic";
+import React, { useState, useRef } from "react";
 import { useRouter } from "next/router";
-// import styles from "../styles/Home.module.css";
-// import Header from "@/components/Header";
-// import Footer from "@/components/Footer";
+
+const QrReader = dynamic(() => import(`react-weblineindia-qrcode-scanner`), {
+  ssr: false,
+});
 
 function Scan() {
-  const [data, setData] = useState("");
+  const videoRef = useRef(null);
+  const [scannedData, setScannedData] = useState(null);
+  const [isReady, setIsReady] = useState(false);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const redirectLink = document.createElement("a")
-  //   redirectLink.href = data
-  //   redirectLink.click()
-  // }, [data])
+  function handleLoad() {
+    setIsReady(true);
+  }
 
-  const redirectTo = (link) => {
-    // console.log(link)
-    router.push(link.substring(23, link.length - 1));
-    // const redirectLink = document.createElement("a")
-    // redirectLink.href = link
-    // redirectLink.click()
+  const handleDetected = (data) => {
+    setScannedData(data);
+    console.log(`Scanned Data: ${data}`);
+    if (videoRef.current && isReady) {
+      videoRef.current.play().catch((error) => {
+        console.error("Error starting scanner:", error);
+      });
+    }
+  };
+
+  const previewStyle = {
+    height: 250,
+    width: 300,
+  };
+
+  const redirect = (data) => {
+    router.push(!data ? "/" : data.substring(52, data.length - 1));
   };
 
   return (
@@ -29,22 +41,20 @@ function Scan() {
       <div className="QrMain">
         <div className="QrScannerContainer">
           <div className="QrScanner">
-            {/* <QrReader
-              onResult={(result, error) => {
-                // console.log(result);
-                if (!!result) {
-                  redirectTo(result?.text)
-                }
-                if (!!error) {
-                  console.info(error)
-                }
-              }}
-              constraints={{ facingMode: "environment" }}
-              style={{ width: "40%", height: "40%" }}
-            />
-            <p>
-              {data}
-            </p> */}
+            <div>
+              {!scannedData ? (
+                <QrReader
+                  style={previewStyle}
+                  onScan={handleDetected}
+                  onLoad={handleLoad}
+                  onError={(e) => {
+                    console.error(e.message);
+                  }}
+                />
+              ) : (
+                <>{redirect(scannedData)}</>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { ImCross } from "react-icons/im"
 import { clearSuccess } from "../redux/slices/success"
@@ -9,16 +9,16 @@ const Success = () => {
   console.log("in success comp", message)
   const dispatch = useDispatch()
   useEffect(() => {
-    if(message){
-        setTimeout(() => {
-          // setIsShowError(false)
-          dispatch(clearSuccess())
-        }, 10000)
+    if (message) {
+      setTimeout(() => {
+        // setIsShowError(false)
+        dispatch(clearSuccess())
+      }, 10000)
     }
-  }, [message])
+  }, [message, dispatch])
 
-//   console.log("in error comp", message)
-  if (message===null) {
+  //   console.log("in error comp", message)
+  if (message === null) {
     return null
   }
   return (

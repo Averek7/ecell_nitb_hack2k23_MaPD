@@ -2,26 +2,26 @@
 // import Image from "next/image";
 // import { Inter } from "@next/font/google";
 // import styles from "@/styles/Home.module.css";
-import Layout from "../components/Layout"
-import Support from "@/components/Support"
-import Desc from "@/components/Desc"
-import { useState } from "react"
-import Scan from "@/components/Scan"
-import { useRouter } from "next/router"
+import Layout from "../components/Layout";
+// import Support from "@/components/Support"
+// import Desc from "@/components/Desc"
+import { useState } from "react";
+import Scan from "@/components/Scan";
+import { useRouter } from "next/router";
 
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const router = useRouter()
-  const [productId, setProductId] = useState("")
+  const router = useRouter();
+  const [productId, setProductId] = useState("");
 
   const handleChange = (e) => {
-    setProductId(e.target.value)
-  }
+    setProductId(e.target.value);
+  };
 
   const handleClick = () => {
-    router.push(`/product/${productId}`)
-  }
+    router.push(`/product/${productId}`);
+  };
 
   return (
     <Layout>

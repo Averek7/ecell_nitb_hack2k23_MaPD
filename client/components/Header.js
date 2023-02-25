@@ -1,73 +1,73 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import logo from "../assets/logo.png";
-import { useIsMounted } from "@/pages/hooks/useIsMounted";
-import { YourButton } from "./Header.data";
-import { useAccount, useSigner } from "wagmi";
-import { useRouter } from "next/router";
-import { ethers } from "ethers";
-import { useDispatch } from "react-redux";
-import { addContractAddresses, saveAddressAndSigner } from "@/redux/header";
-import abi from "../assets/contract_data/Products.json";
-import nftAbi from "../assets/contract_data/nft.json";
-import DL_contract_address from "../assets/contract_data/ProductsAddress.json";
-import nft_contract_address from "../assets/contract_data/nftAddress.json";
+import React, { useEffect } from "react"
+import Image from "next/image"
+import logo from "../assets/logo.png"
+// import { useIsMounted } from "@/pages/hooks/useIsMounted";
+import { YourButton } from "./Header.data"
+import { useAccount, useSigner } from "wagmi"
+// import { useRouter } from "next/router";
+import { ethers } from "ethers"
+import { useDispatch } from "react-redux"
+import { addContractAddresses, saveAddressAndSigner } from "@/redux/header"
+import abi from "../assets/contract_data/Products.json"
+import nftAbi from "../assets/contract_data/nft.json"
+import DL_contract_address from "../assets/contract_data/ProductsAddress.json"
+import nft_contract_address from "../assets/contract_data/nftAddress.json"
 
-import { FaHome } from "react-icons/fa";
-import { BsCollectionFill, BsFillPersonFill } from "react-icons/bs";
-import { IoIosAddCircleOutline } from "react-icons/io";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { FaHome } from "react-icons/fa"
+import { BsCollectionFill, BsFillPersonFill } from "react-icons/bs"
+import { IoIosAddCircleOutline } from "react-icons/io"
+import { MdOutlineDashboardCustomize } from "react-icons/md"
 
-import Link from "next/link";
-import { logout } from "../redux/slices/auth";
+import Link from "next/link"
+// import { logout } from "../redux/slices/auth";
 
 function Header() {
   // const router = useRouter()
-  const mounted = useIsMounted();
-  const dispatch = useDispatch();
-  const { address } = useAccount();
-  const { data: signer } = useSigner();
-  const [addressfinal, setAddressfinal] = useState(null);
-  const token = mounted ? localStorage.getItem("token") : null;
-  const router = useRouter();
+  // const mounted = useIsMounted();
+  const dispatch = useDispatch()
+  const { address } = useAccount()
+  const { data: signer } = useSigner()
+  // const [addressfinal, setAddressfinal] = useState(null);
+  // const token = mounted ? localStorage.getItem("token") : null;
+  // const router = useRouter();
 
   const instances = new ethers.Contract(
     DL_contract_address.address,
     abi.abi,
     signer
-  );
+  )
 
   const nftInstances = new ethers.Contract(
     nft_contract_address.address,
     nftAbi.abi,
     signer
-  );
+  )
 
   useEffect(() => {
     dispatch(
       addContractAddresses({
         DL_contract_address: DL_contract_address.address,
-        nft_contract_address: nft_contract_address.address,
+        nft_contract_address: nft_contract_address.address
       })
-    );
+    )
     address && signer
       ? dispatch(
           saveAddressAndSigner({ address, signer, instances, nftInstances })
         )
-      : null;
-  }, [signer]);
+      : null
+  }, [signer, dispatch])
 
-  const doLogout = () => {
-    dispatch(logout());
-    if (!localStorage.getItem("token")) {
-      router.push("/");
-    }
-  };
+  // const doLogout = () => {
+  //   dispatch(logout());
+  //   if (!localStorage.getItem("token")) {
+  //     router.push("/");
+  //   }
+  // };
 
   return (
     <>
       <div className="logo-container">
-        <Image src={logo} width={60} height={60} />
+        <Image alt="image" src={logo} width={60} height={60} />
       </div>
       <div className="Header">
         <ul className="navbar">
@@ -124,7 +124,7 @@ function Header() {
         )} */}
       </div>
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header

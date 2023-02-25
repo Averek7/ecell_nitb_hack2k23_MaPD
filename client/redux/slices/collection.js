@@ -11,14 +11,13 @@ export const getMyNfts = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      console.log(err);
+      console.log(error.message);
     }
   }
 );
 
 export const mintNft = createAsyncThunk("/mint", async (data, thunkAPI) => {
   try {
-    // const walletAddress = thunkAPI.getState().header.walletAddress;
     const response = await axios.post(
       `${process.env.BACKEND_ENDPOINT}/mint/addMintHistory`,
       data
@@ -40,7 +39,7 @@ export const collectionSlice = createSlice({
   },
   reducers: {},
   extraReducers: (builder) => {
-    function onPending(state, action) {
+    function onPending(state) {
       state.loading = true;
       state.error = null;
     }
@@ -48,7 +47,7 @@ export const collectionSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     }
-    builder.addCase(mintNft.fulfilled, (state, action) => {
+    builder.addCase(mintNft.fulfilled, (state) => {
       state.loading = false;
     });
     builder.addCase(getMyNfts.fulfilled, (state, action) => {

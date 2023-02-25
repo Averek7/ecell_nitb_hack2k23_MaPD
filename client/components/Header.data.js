@@ -1,4 +1,5 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit"
+import Image from "next/image"
 
 export const YourButton = () => {
   return (
@@ -52,10 +53,10 @@ export const YourButton = () => {
                   >
                     Wrong network
                   </button>
-                );
+                )
               }
               return (
-                <div  >
+                <div>
                   {/* <button
                     onClick={openChainModal}
                     style={{ display: "flex", alignItems: "center" }}
@@ -88,7 +89,6 @@ export const YourButton = () => {
                     className="btn logo-btn"
                     onClick={openAccountModal}
                     type="button"
-                    
                   >
                     {chain.hasIcon && (
                       <div
@@ -102,15 +102,15 @@ export const YourButton = () => {
                         }}
                       >
                         {chain.iconUrl && (
-                          <img
+                          <Image
                             alt={chain.name ?? "Chain icon"}
                             src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
+                            width="12"
+                            height="12"
                           />
                         )}
                       </div>
                     )}
-                    
                   </button>
                 </div>
               )

@@ -34,8 +34,8 @@
 .internalRight{
     width: 100%;
     margin: 20px;
-    height: 68vh;
-    
+    /* height: 68vh; */
+    /* scroll-behavior: auto; */
 }
 
 .prodtxtBox{

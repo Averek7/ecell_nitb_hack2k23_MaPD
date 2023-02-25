@@ -11,15 +11,16 @@ import InputBox from "@/components/InputBox";
 import { QRCodeCanvas } from "qrcode.react";
 import axios from "axios";
 import { updateProduct } from "@/redux/slices/product";
-import { mintNft } from "../../redux/slices/collection";
+// import { mintNft } from "../../redux/slices/collection";
 import Loader from "@/components/Loader";
 import Image from "next/image";
 import nft_contract_address from "../../assets/contract_data/nftAddress.json";
+// import Videos from "../videos"
 
 const projectId = "2LaElUcAr2SYK3KuPpor7Xlc5hB";
 const projectSecret = "0947f1f7854b4631c685a30c20e51d4d";
 
-function index() {
+function Index() {
   const dispatch = useDispatch();
   const [qrImg, setQrImg] = useState(null);
   const [localLoading, setLocalLoading] = useState(false);
@@ -28,12 +29,11 @@ function index() {
     title: "",
     description: "",
     image: "",
+    video: null,
   });
   const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDhhQTQzM0RkY2M4QzM5YWJFQzdmNzZDM2REQjlFOTBhMWY3RTk2RjMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NjkxMjcxMDk3NjMsIm5hbWUiOiJsZW5kTmZ0In0.7Zu-wSF34-7GlU5rVIXAvrIczw6MQYT4yV7vOVU9pis`;
   const storage = new Web3Storage({ token: token });
-  const { walletAddress, signer, nftInstances } = useSelector(
-    (state) => state.header
-  );
+  const { walletAddress, nftInstances } = useSelector((state) => state.header);
   const { instances } = useSelector((state) => state.header);
 
   const handleChange = (e) => {
@@ -63,7 +63,7 @@ function index() {
       id: Number(id.toString()) + 9,
     };
     id = Number(id.toString()) + 9;
-    
+
     console.log("ID added", id);
     let qr = null;
     qr = await axios.get(
@@ -180,47 +180,46 @@ function index() {
       });
   };
 
-  const handleClick = () => {
-    const auth =
-      "Basic " +
-      Buffer.from(projectId + ":" + projectSecret).toString("base64");
-    const client = create({
-      host: "ipfs.infura.io",
-      port: 5001,
-      protocol: "https",
-      apiPath: "/api/v0",
-      headers: {
-        authorization: auth,
-      },
-    });
-    setLocalLoading(false);
-    client
-      .add(JSON.stringify(data))
-      .then(async (res) => {
-        console.log("result", `https://ipfs.io/ipfs/${res.path}`);
-        const dataIpfs = `https://ipfs.io/ipfs/${res.path}`;
-        console.log("address", walletAddress);
-        console.log("dataIPFS", dataIpfs);
-        setLocalLoading(true);
+  // const handleClick = () => {
+  //   const auth =
+  //     "Basic " + Buffer.from(projectId + ":" + projectSecret).toString("base64")
+  //   const client = create({
+  //     host: "ipfs.infura.io",
+  //     port: 5001,
+  //     protocol: "https",
+  //     apiPath: "/api/v0",
+  //     headers: {
+  //       authorization: auth
+  //     }
+  //   })
+  //   setLocalLoading(false)
+  //   client
+  //     .add(JSON.stringify(data))
+  //     .then(async (res) => {
+  //       console.log("result", `https://ipfs.io/ipfs/${res.path}`)
+  //       const dataIpfs = `https://ipfs.io/ipfs/${res.path}`
+  //       console.log("address", walletAddress)
+  //       console.log("dataIPFS", dataIpfs)
+  //       setLocalLoading(true)
 
-        let qrNftTx = await nftInstances.safeMint(walletAddress, dataIpfs);
-        console.log("Mining...", qrNftTx.hash);
-        // Status
-        let tx = await qrNftTx.wait();
-        setLocalLoading(false);
+  //       let qrNftTx = await nftInstances.safeMint(walletAddress, dataIpfs)
+  //       console.log("Mining...", qrNftTx.hash)
+  //       // Status
+  //       let tx = await qrNftTx.wait()
+  //       setLocalLoading(false)
 
-        console.log("Mined !", tx);
-        console.log(
-          `Mined, see transaction: https://mumbai.polygonscan.com/tx/${qrNftTx.hash}`
-        );
-        dispatch(setSuccess(`Minted Successfully with ${qrNftTx.hash}`));
-      })
-      .catch((err) => {
-        console.log("Error: ", err);
-        setLocalLoading(false);
-        dispatch(setError("Failed to generate IPFS link, Please retry"));
-      });
-  };
+  //       console.log("Mined !", tx)
+  //       console.log(
+  //         `Mined, see transaction: https://mumbai.polygonscan.com/tx/${qrNftTx.hash}`
+  //       )
+  //       dispatch(setSuccess(`Minted Successfully with ${qrNftTx.hash}`))
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error: ", err)
+  //       setLocalLoading(false)
+  //       dispatch(setError("Failed to generate IPFS link, Please retry"))
+  //     })
+  // }
 
   const nftUpload = (e) => {
     e.preventDefault();
@@ -246,59 +245,58 @@ function index() {
     console.log(data.image);
   };
 
-  const uploadqr = () => {
-    let canvas = qrRef.current.querySelector("canvas");
-    let image = canvas.toDataURL("image/png");
+  // const uploadqr = () => {
+  //   let canvas = qrRef.current.querySelector("canvas")
+  //   let image = canvas.toDataURL("image/png")
 
-    const auth =
-      "Basic " +
-      Buffer.from(projectId + ":" + projectSecret).toString("base64");
-    const client = create({
-      host: "ipfs.infura.io",
-      port: 5001,
-      protocol: "https",
-      apiPath: "/api/v0",
-      headers: {
-        authorization: auth,
-      },
-    });
-    client
-      .add(JSON.stringify(image))
-      .then(async (res) => {
-        console.log("result", `https://ipfs.io/ipfs/${res.path}`);
-        const dataIpfs = `https://ipfs.io/ipfs/${res.path}`;
-        console.log("address", walletAddress);
-        console.log("dataIPFS", dataIpfs);
+  //   const auth =
+  //     "Basic " + Buffer.from(projectId + ":" + projectSecret).toString("base64")
+  //   const client = create({
+  //     host: "ipfs.infura.io",
+  //     port: 5001,
+  //     protocol: "https",
+  //     apiPath: "/api/v0",
+  //     headers: {
+  //       authorization: auth
+  //     }
+  //   })
+  //   client
+  //     .add(JSON.stringify(image))
+  //     .then(async (res) => {
+  //       console.log("result", `https://ipfs.io/ipfs/${res.path}`)
+  //       const dataIpfs = `https://ipfs.io/ipfs/${res.path}`
+  //       console.log("address", walletAddress)
+  //       console.log("dataIPFS", dataIpfs)
 
-        let qrNftTx = await nftInstances.safeMint(walletAddress, dataIpfs);
-        console.log("Mining...", qrNftTx.hash);
-        // Status
-        let tx = await qrNftTx.wait();
-        // Loader
-        console.log("Mined !", tx);
+  //       let qrNftTx = await nftInstances.safeMint(walletAddress, dataIpfs)
+  //       console.log("Mining...", qrNftTx.hash)
+  //       // Status
+  //       let tx = await qrNftTx.wait()
+  //       // Loader
+  //       console.log("Mined !", tx)
 
-        console.log(
-          `Mined, see transaction: https://mumbai.polygonscan.com/tx/${qrNftTx.hash}`
-        );
-      })
-      .catch((err) => {
-        console.log("Error: ", err);
-        dispatch(setError("Failed to generate IPFS link, Please retry"));
-      });
-  };
+  //       console.log(
+  //         `Mined, see transaction: https://mumbai.polygonscan.com/tx/${qrNftTx.hash}`
+  //       )
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error: ", err)
+  //       dispatch(setError("Failed to generate IPFS link, Please retry"))
+  //     })
+  // }
 
-  const downloadQRCode = (e) => {
-    e.preventDefault();
-    let canvas = qrRef.current.querySelector("canvas");
-    let image = canvas.toDataURL("image/png");
-    let anchor = document.createElement("a");
-    anchor.href = image;
-    anchor.download = `qr-code.png`;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-    setUrl("");
-  };
+  // const downloadQRCode = (e) => {
+  //   e.preventDefault()
+  //   let canvas = qrRef.current.querySelector("canvas")
+  //   let image = canvas.toDataURL("image/png")
+  //   let anchor = document.createElement("a")
+  //   anchor.href = image
+  //   anchor.download = `qr-code.png`
+  //   document.body.appendChild(anchor)
+  //   anchor.click()
+  //   document.body.removeChild(anchor)
+  //   setUrl("")
+  // }
 
   const qrcode = (
     <QRCodeCanvas
@@ -365,7 +363,7 @@ function index() {
                   placeholder="Item Name"
                   disabled={localLoading}
                 />
-
+                {/* <Videos handleChange={handleChange} /> */}
                 <InputBox
                   name="title"
                   title="Title"
@@ -405,4 +403,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

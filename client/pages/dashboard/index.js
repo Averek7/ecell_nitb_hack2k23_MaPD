@@ -1,13 +1,13 @@
-import Layout from "@/components/Layout";
-import Image from "next/image";
-import React, { useState } from "react";
-import { useAccount } from "wagmi";
-import logo from "@/assets/logo.png";
-import TransactionCard from "@/components/TransactionCard";
+import Layout from "@/components/Layout"
+import Image from "next/image"
+import React from "react"
+import { useAccount } from "wagmi"
+import logo from "@/assets/logo.png"
+import TransactionCard from "@/components/TransactionCard"
 
 function Dashboard() {
-  const { address } = useAccount();
-  const [tab, setTab] = useState("Listed");
+  const { address } = useAccount()
+  // const [tab, setTab] = useState("Listed");
   return (
     <Layout>
       <div className="detailContainer">
@@ -45,7 +45,7 @@ function Dashboard() {
         </div>
       </div>
     </Layout>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard

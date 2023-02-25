@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { ImCross } from "react-icons/im"
 import { clearError } from "../redux/slices/error"
@@ -8,15 +8,15 @@ const Error = () => {
   const { message } = useSelector((state) => state.error)
   const dispatch = useDispatch()
   useEffect(() => {
-    if(message){
-        setTimeout(() => {
-          // setIsShowError(false)
-          dispatch(clearError())
-        }, 10000)
+    if (message) {
+      setTimeout(() => {
+        // setIsShowError(false)
+        dispatch(clearError())
+      }, 10000)
     }
-  }, [message])
+  }, [message, dispatch])
 
-  if (message===null) {
+  if (message === null) {
     return null
   }
   return (

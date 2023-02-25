@@ -1,17 +1,8 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   env: {
-    BACKEND_ENDPOINT: "http://65.2.150.236:5000",
+    BACKEND_ENDPOINT: "https://ethermionsv2.onrender.com/api",
   },
-  webpack5: true,
-  webpack: (config) => {
-    config.resolve.fallback = { fs: false };
-
-    return config;
-  },
-  // swcMinify: true,
-  // experimental: {
-  //   forceSwcTransforms: true,
-  // },
   images: {
     remotePatterns: [
       {
@@ -21,4 +12,8 @@ module.exports = {
       },
     ],
   },
+
+  reactStrictMode: true,
 };
+
+module.exports = nextConfig;

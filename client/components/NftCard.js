@@ -1,17 +1,17 @@
-import React from "react";
-import Image from "next/image";
-import logo from "../assets/logo.png";
-import { useAccount } from "wagmi";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import React from "react"
+import Image from "next/image"
+import logo from "../assets/logo.png"
+// import { useAccount } from "wagmi";
+// import { useRouter } from "next/router"
+import Link from "next/link"
 
 function NftCard({ item }) {
-  const { address } = useAccount();
-  const router = useRouter();
-  const handleClick = (e) => {
-    e.preventDefault();
-    router.push;
-  };
+  // const { address } = useAccount();
+  // const router = useRouter()
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   router.push;
+  // };
   return (
     <div>
       <div className="Ncontainer">
@@ -36,10 +36,12 @@ function NftCard({ item }) {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
-                  margin: "5px",
+                  margin: "5px"
                 }}
               >
-                <span style={{ padding: "0px", margin: "0px" }}>{item.email}</span>
+                <span style={{ padding: "0px", margin: "0px" }}>
+                  {item.email}
+                </span>
                 <Link href="/transferOwner" className="btn mintBtn">
                   View NFT
                 </Link>
@@ -49,7 +51,7 @@ function NftCard({ item }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default NftCard;
+export default NftCard
